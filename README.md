@@ -13,7 +13,7 @@ Restaurant Reviewer allows ___ to ____.
 
 Derek Han - https://github.com/alograti
 Michael Thuon - https://github.com/mgt306
-Ahn Tran - 
+Anh Tran - https://github.com/Anhtrr
 
 ## History and how to contribute
 
