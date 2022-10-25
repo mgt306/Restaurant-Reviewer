@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import Map from 'react-map-gl';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    return (
+      <div className='App'>
+        <h1>Welcome to your Restaurant Reviewer</h1>
+        <Map
+          mapboxAccessToken={
+            'pk.eyJ1IjoiYW5odHJyIiwiYSI6ImNsOW9kbGtwazBnbTAzd281YXJ3ejhjcmsifQ.Et0LpdRG7mN6MB58p_52qQ'
+          }
+          initialViewState={{
+            longitude: -73.9976,
+            latitude: 40.7307,
+            zoom: 13,
+          }}
+          style={{
+            width: window.innerWidth, height: window.innerHeight
+          }}
+          mapStyle="mapbox://styles/anhtrr/cl9odtk6b001v15s1cq54igry"
+        />
+      </div>
   );
 }
 
