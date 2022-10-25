@@ -3,16 +3,13 @@
 # Product Vision
  For students, and adults alike, Restaurant Reivewer allows users to rate more aspects of a restaurant. Some of these are staff, ambiance, and service. 
 
-# Product Description
-
-Restaurant Reviewer allows ___ to ____. 
 
 
 ## Team Members
 
 
 Derek Han - https://github.com/alograti
-Michael Thuon - https://github.com/mgt306
+Michael Thuo - https://github.com/mgt306
 Anh Tran - https://github.com/Anhtrr
 
 ## History and how to contribute
@@ -22,7 +19,7 @@ Restaurant Reviewer was created as a student project in a class named "Remote De
 
 ## How to build and test the project
 
-N/A
+Open the front end, and use npm install if necessary to download all dependencies. Then run npm start. 
 
 ## Additional info and documents
 
