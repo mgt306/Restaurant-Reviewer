@@ -4,7 +4,7 @@ import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
 import Profile from './Pages/Profile/Profile';
 import Explore from './Pages/Explore/Explore';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path ='/about' element={<About/>}/>
         <Route path ='/profile' element={<Profile/>}/>
         <Route path ='/explore' element={<Explore/>}/>
+        <Route path ='*' element={ <Navigate to ='/'/> } />
       </Routes>
     </div>
   );
