@@ -1,33 +1,107 @@
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import React , {useEffect} from 'react';
+import $ from 'jquery';
 
 const Navbar = () => {
     
+    function animation(){
+        var tabsNewAnim = $('#navbarSupportedContent');
+        var activeItemNewAnim = tabsNewAnim.find('.active');
+        var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+        var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+        var itemPosNewAnimTop = activeItemNewAnim.position();
+        var itemPosNewAnimLeft = activeItemNewAnim.position(); 
+        $(".hori-selector").css({
+            "top":itemPosNewAnimTop.top + "px", 
+            "left":itemPosNewAnimLeft.left + "px",
+            "height": activeWidthNewAnimHeight + "px",
+            "width": activeWidthNewAnimWidth + "px"
+          });
+        $("#navbarSupportedContent").on("click","li",function(e){
+            $('#navbarSupportedContent ul li').removeClass("active");
+            $(this).addClass('active');
+            var activeWidthNewAnimHeight = $(this).innerHeight();
+            var activeWidthNewAnimWidth = $(this).innerWidth();
+            var itemPosNewAnimTop = $(this).position();
+            var itemPosNewAnimLeft = $(this).position();
+            $(".hori-selector").css({
+                "top":itemPosNewAnimTop.top + "px", 
+                "left":itemPosNewAnimLeft.left + "px",
+                "height": activeWidthNewAnimHeight + "px",
+                "width": activeWidthNewAnimWidth + "px"
+            });
+        });
+    }
+    useEffect(() => {
     
+        animation();
+        $(window).on('resize', function(){
+          setTimeout(function(){ animation(); }, 500);
+        });
+        
+    }, []);
+
     return (  
-        <nav className="navbar">
-            <Link to="/" className="siteName">
+        <nav className="navbar navbar-expand-lg navbar-mainbg">
+            
+            <NavLink className="navbar-brand navbar-logo" to="/">
                 Restaurant Reviewers
-            </Link>
-            <ul>
-                <CustomLink to="/">Home</CustomLink>
-                <CustomLink to="/profile">Profile</CustomLink>
-                <CustomLink to="/about">About</CustomLink>
-                <CustomLink to="/explore">Explore</CustomLink>             
-            </ul>
+            </NavLink>
+
+            <button 
+                className="navbar-toggler"
+                onClick={ function(){
+                setTimeout(function(){ animation(); });
+                }}
+                type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i className="fas fa-bars text-#1e1e1e"></i>
+            </button>
+
+            <div
+                className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ms-auto">
+                    
+                    <div className="hori-selector">
+                        <div className="left"></div>
+                        <div className="right"></div>
+                    </div>
+
+                    <li className='nav-item active'>
+                        <NavLink className='nav-link' to="/">
+                        <i 
+                            className="fas fa-home">
+                        </i>Home
+                        </NavLink>
+                    </li>
+
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to="/profile">
+                        <i 
+                            className="far fa-address-card">
+                        </i>Profile
+                        </NavLink>
+                    </li>
+
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to="/about">
+                        <i 
+                            className="far fa-chart-bar">
+                        </i>About
+                        </NavLink>
+                    </li>
+                    
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to="/explore">
+                        <i 
+                            className="fas fa-utensils">
+                        </i>Explore
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
         </nav>
     );
 }
 
-function CustomLink({ to, children, ...props}){
-    const resolvedPath = useResolvedPath(to)
-    const isActive = useMatch({path: resolvedPath.pathname, end: true})
-    return(
-        <li className={isActive ? "active" : ""}>
-            <Link to={to} {...props}>
-                {children}
-            </Link>
-        </li>
-    )
-}
 export default Navbar;
