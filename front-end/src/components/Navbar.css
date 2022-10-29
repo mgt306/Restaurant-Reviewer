@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: #1e1e1e; /* fallback for old browsers */
+  background: #1e1e1e;
 }
 * {
   margin: 0;
@@ -13,13 +13,19 @@ i {
 }
 .navbar-logo {
   padding: 3px;
-  padding-left: 30px;
-  font-size: 10mm;
+  padding-left: 20px;
+  font-size: 8mm;
   color: #1e1e1e;
+  text-shadow: 5px 5px #fff;
 }
 .navbar-mainbg {
   background-color: #a3e7f5;
   padding: 0px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top: 5px solid #1e1e1e;
+  border-bottom: 5px solid #1e1e1e;
+  border-left: 5px solid #1e1e1e;
 }
 #navbarSupportedContent {
   overflow: hidden;
@@ -28,7 +34,6 @@ i {
 #navbarSupportedContent ul {
   padding: 0px;
   margin: 0px;
-  float: right;
 }
 #navbarSupportedContent ul li a i {
   margin-right: 10px;

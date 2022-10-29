@@ -23,7 +23,7 @@ const Mapp = () => {
                     <Map className="Original"
                         mapboxAccessToken = {"pk.eyJ1IjoiYW5odHJyIiwiYSI6ImNsOW9kbGtwazBnbTAzd281YXJ3ejhjcmsifQ.Et0LpdRG7mN6MB58p_52qQ"}
                         initialViewState={viewport}
-                        style={{width: '100vw', height: '95vh'}}
+                        style={{width: '100vw', height: '94vh'}}
                         mapStyle="mapbox://styles/anhtrr/cl9odtk6b001v15s1cq54igry"
                         onRender={(event) => event.target.resize()}
                     >
