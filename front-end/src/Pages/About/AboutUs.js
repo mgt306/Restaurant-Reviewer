@@ -14,8 +14,8 @@ const AboutUs=()=>{
         <gall className='gallery-about'>
           <a><img src={Ahn} />
             <p></p>
-            <artists>Ahn Tran</artists>
-            <desc>Description N/A</desc>
+            <artists>Anh Tran</artists>
+            <desc>Hello! I'm a current 4th year student @ NYU studying CS. I use he/him pronouns. I love photography and boxing!</desc>
           </a>
           <a><img src={Derek} />
             <p></p>
@@ -33,7 +33,7 @@ const AboutUs=()=>{
           <h2 className='h2-about'>About the Project</h2>
           <p className='p2-about'>
             This project was created for the final project of the CS Level Elective course "Remote Development" at NYU's College of Arts and Sciences. 
-             The project was created by a team of 3 students: Ahn Tran, Derek Han, and Michael Foo. The project was created using React, Expres, Node.js, and MongoDB.
+             The project was created by a team of 3 students: Anh Tran, Derek Han, and Michael Foo. The project was created using React, Express, Node.js, and MongoDB.
           </p>
       </div>
       </wrapper>

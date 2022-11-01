@@ -81,20 +81,20 @@ const Navbar = () => {
                         </i>Profile
                         </NavLink>
                     </li>
-
-                    <li className='nav-item'>
-                        <NavLink className='nav-link' to="/about">
-                        <i 
-                            className="far fa-chart-bar">
-                        </i>About
-                        </NavLink>
-                    </li>
                     
                     <li className='nav-item'>
                         <NavLink className='nav-link' to="/explore">
                         <i 
                             className="fas fa-utensils">
                         </i>Explore
+                        </NavLink>
+                    </li>
+                    
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to="/about">
+                        <i 
+                            className="far fa-chart-bar">
+                        </i>About Us
                         </NavLink>
                     </li>
                 </ul>
