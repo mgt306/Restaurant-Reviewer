@@ -10,7 +10,7 @@ const Mapp = () => {
                 ...viewport,
                 latitude: pos.coords.latitude,
                 longitude: pos.coords.longitude,
-                zoom: 13.5,
+                zoom: 15,
                 pitch: 45,
             });
         });
