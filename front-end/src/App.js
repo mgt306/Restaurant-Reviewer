@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import About from './Pages/About/About';
+import AboutUs from './Pages/About/AboutUs';
 import Home from './Pages/Home/Home';
 import Profile from './Pages/Profile/Profile';
 import Explore from './Pages/Explore/Explore';
@@ -13,7 +13,7 @@ function App() {
         <main>
           <Routes>
             <Route path ='/' element={<Home/>}/>
-            <Route path ='/about' element={<About/>}/>
+            <Route path ='/about' element={<AboutUs/>}/>
             <Route path ='/profile' element={<Profile/>}/>
             <Route path ='/explore' element={<Explore/>}/>
             <Route path ='*' element={ <Navigate to ='/'/> } />
