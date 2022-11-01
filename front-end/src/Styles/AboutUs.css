@@ -65,7 +65,7 @@
 .gallery-about artists{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 2.5vw;
-  font-size:  2vw ; 
+  font-size:  calc(1em + 0.8vmin); 
   color: #a3e7f5;
 }
 .g-back{
@@ -76,8 +76,6 @@
 .gallery-about desc{
   display: grid;
   color: #a3e7f5;
-  font-size:  1.2vw;
-  padding-top: 0.2vw;
 }
 .aboutProj{
   text-orientation: upright;
