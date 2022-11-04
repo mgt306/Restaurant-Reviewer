@@ -1,0 +1,330 @@
+{
+    "type": "FeatureCollection",
+    "query": [
+        "restaurant"
+    ],
+    "features": [
+        {
+            "id": "poi.1236950596847",
+            "type": "Feature",
+            "place_type": [
+                "poi"
+            ],
+            "relevance": 1,
+            "properties": {
+                "foursquare": "4c5ef77bfff99c74eda954d3",
+                "landmark": true,
+                "address": "200 5th Ave",
+                "category": "italian restaurant, italian food, restaurant"
+            },
+            "text": "Eataly Flatiron",
+            "place_name": "Eataly Flatiron, 200 5th Ave, New York, New York 10010, United States",
+            "center": [
+                -73.989913,
+                40.741987
+            ],
+            "geometry": {
+                "coordinates": [
+                    -73.989913,
+                    40.741987
+                ],
+                "type": "Point"
+            },
+            "context": [
+                {
+                    "id": "neighborhood.644025580",
+                    "text": "The Flatiron District"
+                },
+                {
+                    "id": "postcode.24678124",
+                    "text": "10010"
+                },
+                {
+                    "id": "locality.338856684",
+                    "wikidata": "Q11299",
+                    "text": "Manhattan"
+                },
+                {
+                    "id": "place.233720044",
+                    "wikidata": "Q60",
+                    "text": "New York"
+                },
+                {
+                    "id": "district.17000172",
+                    "wikidata": "Q500416",
+                    "text": "New York County"
+                },
+                {
+                    "id": "region.107756",
+                    "short_code": "US-NY",
+                    "wikidata": "Q1384",
+                    "text": "New York"
+                },
+                {
+                    "id": "country.8940",
+                    "short_code": "us",
+                    "wikidata": "Q30",
+                    "text": "United States"
+                }
+            ]
+        },
+        {
+            "id": "poi.377957223198",
+            "type": "Feature",
+            "place_type": [
+                "poi"
+            ],
+            "relevance": 1,
+            "properties": {
+                "wikidata": "Q2611788",
+                "landmark": true,
+                "address": "205 E Houston St",
+                "foursquare": "4acbe67af964a52044c820e3",
+                "category": "jewish restaurant, jewish food, restaurant"
+            },
+            "text": "Katz's Delicatessen",
+            "place_name": "Katz's Delicatessen, 205 E Houston St, New York, New York 10002, United States",
+            "center": [
+                -73.987381,
+                40.722306
+            ],
+            "geometry": {
+                "coordinates": [
+                    -73.987381,
+                    40.722306
+                ],
+                "type": "Point"
+            },
+            "context": [
+                {
+                    "id": "neighborhood.374467820",
+                    "text": "Lower East Side"
+                },
+                {
+                    "id": "postcode.24612588",
+                    "text": "10002"
+                },
+                {
+                    "id": "locality.338856684",
+                    "wikidata": "Q11299",
+                    "text": "Manhattan"
+                },
+                {
+                    "id": "place.233720044",
+                    "wikidata": "Q60",
+                    "text": "New York"
+                },
+                {
+                    "id": "district.17000172",
+                    "wikidata": "Q500416",
+                    "text": "New York County"
+                },
+                {
+                    "id": "region.107756",
+                    "short_code": "US-NY",
+                    "wikidata": "Q1384",
+                    "text": "New York"
+                },
+                {
+                    "id": "country.8940",
+                    "short_code": "us",
+                    "wikidata": "Q30",
+                    "text": "United States"
+                }
+            ]
+        },
+        {
+            "id": "poi.523986112884",
+            "type": "Feature",
+            "place_type": [
+                "poi"
+            ],
+            "relevance": 1,
+            "properties": {
+                "foursquare": "503f293c19a9def238a153b3",
+                "landmark": true,
+                "address": "201 1st Ave",
+                "category": "filipino restaurant, filipino food, restaurant"
+            },
+            "text": "Jeepney Filipino Gastropub",
+            "place_name": "Jeepney Filipino Gastropub, 201 1st Ave, New York, New York 10003, United States",
+            "center": [
+                -73.983617,
+                40.730307
+            ],
+            "geometry": {
+                "coordinates": [
+                    -73.983617,
+                    40.730307
+                ],
+                "type": "Point"
+            },
+            "context": [
+                {
+                    "id": "neighborhood.187075820",
+                    "text": "East Village"
+                },
+                {
+                    "id": "postcode.24620780",
+                    "text": "10003"
+                },
+                {
+                    "id": "locality.338856684",
+                    "wikidata": "Q11299",
+                    "text": "Manhattan"
+                },
+                {
+                    "id": "place.233720044",
+                    "wikidata": "Q60",
+                    "text": "New York"
+                },
+                {
+                    "id": "district.17000172",
+                    "wikidata": "Q500416",
+                    "text": "New York County"
+                },
+                {
+                    "id": "region.107756",
+                    "short_code": "US-NY",
+                    "wikidata": "Q1384",
+                    "text": "New York"
+                },
+                {
+                    "id": "country.8940",
+                    "short_code": "us",
+                    "wikidata": "Q30",
+                    "text": "United States"
+                }
+            ]
+        },
+        {
+            "id": "poi.773094218715",
+            "type": "Feature",
+            "place_type": [
+                "poi"
+            ],
+            "relevance": 1,
+            "properties": {
+                "foursquare": "59c933d32d2fd975644a009f",
+                "landmark": true,
+                "address": "235 Sullivan St",
+                "category": "thai restaurant, thai food, restaurant"
+            },
+            "text": "Top Thai",
+            "place_name": "Top Thai, 235 Sullivan St, New York, New York 10012, United States",
+            "center": [
+                -73.999518,
+                40.729895
+            ],
+            "geometry": {
+                "coordinates": [
+                    -73.999518,
+                    40.729895
+                ],
+                "type": "Point"
+            },
+            "context": [
+                {
+                    "id": "neighborhood.261524716",
+                    "text": "Greenwich Village"
+                },
+                {
+                    "id": "postcode.24694508",
+                    "text": "10012"
+                },
+                {
+                    "id": "locality.338856684",
+                    "wikidata": "Q11299",
+                    "text": "Manhattan"
+                },
+                {
+                    "id": "place.233720044",
+                    "wikidata": "Q60",
+                    "text": "New York"
+                },
+                {
+                    "id": "district.17000172",
+                    "wikidata": "Q500416",
+                    "text": "New York County"
+                },
+                {
+                    "id": "region.107756",
+                    "short_code": "US-NY",
+                    "wikidata": "Q1384",
+                    "text": "New York"
+                },
+                {
+                    "id": "country.8940",
+                    "short_code": "us",
+                    "wikidata": "Q30",
+                    "text": "United States"
+                }
+            ]
+        },
+        {
+            "id": "poi.42949779242",
+            "type": "Feature",
+            "place_type": [
+                "poi"
+            ],
+            "relevance": 1,
+            "properties": {
+                "foursquare": "49da73e1f964a5208a5e1fe3",
+                "landmark": true,
+                "address": "11 Saint Marks Pl",
+                "category": "japanese restaurant, japanese food, restaurant"
+            },
+            "text": "Udon West",
+            "place_name": "Udon West, 11 Saint Marks Pl, New York, New York 10003, United States",
+            "center": [
+                -73.989287,
+                40.729307
+            ],
+            "geometry": {
+                "coordinates": [
+                    -73.989287,
+                    40.729307
+                ],
+                "type": "Point"
+            },
+            "context": [
+                {
+                    "id": "neighborhood.187075820",
+                    "text": "East Village"
+                },
+                {
+                    "id": "postcode.24620780",
+                    "text": "10003"
+                },
+                {
+                    "id": "locality.338856684",
+                    "wikidata": "Q11299",
+                    "text": "Manhattan"
+                },
+                {
+                    "id": "place.233720044",
+                    "wikidata": "Q60",
+                    "text": "New York"
+                },
+                {
+                    "id": "district.17000172",
+                    "wikidata": "Q500416",
+                    "text": "New York County"
+                },
+                {
+                    "id": "region.107756",
+                    "short_code": "US-NY",
+                    "wikidata": "Q1384",
+                    "text": "New York"
+                },
+                {
+                    "id": "country.8940",
+                    "short_code": "us",
+                    "wikidata": "Q30",
+                    "text": "United States"
+                }
+            ]
+        }
+    ],
+    "attribution": "NOTICE: © 2022 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained. POI(s) provided by Foursquare."
+}
