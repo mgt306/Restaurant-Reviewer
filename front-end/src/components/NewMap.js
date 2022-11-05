@@ -17,8 +17,11 @@ const NewMap = () =>{
             pitch:45,
           });
         
-        markerJson.features.map((feature) => 
-            new mapboxgl.Marker().setLngLat(feature.center).addTo(map)
+        markerJson.results.data.map((feature) =>{ 
+            const center1 = [feature.longitude.replace(/['"]+/g, ''), feature.latitude.replace(/['"]+/g, '')];
+            console.log(center1);
+            new mapboxgl.Marker().setLngLat(center1).addTo(map)
+        }
         )
 
         map.addControl(new mapboxgl.NavigationControl(), "top-right");
