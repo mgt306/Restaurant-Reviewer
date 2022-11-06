@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../Styles/AboutUs.css';
 import Ahn from "../../Images/Ahn.PNG"
-import Derek from "../../Images/Derek.jpg"
+import Derek from "../../Images/Derek.PNG"
 import Michael from "../../Images/Michael.jpg"
 
 const AboutUs=()=>{
