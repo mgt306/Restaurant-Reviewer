@@ -97,8 +97,25 @@ const Navbar = () => {
                         </i>About Us
                         </NavLink>
                     </li>
+
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to="/login">
+                        <i
+                            className="fas fa-sign-in-alt">
+                        </i>Login
+                        </NavLink>
+                    </li>
+
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to="/register">
+                        <i
+                            className="fas fa-user-plus">
+                        </i>Register
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
+
         </nav>
     );
 }
