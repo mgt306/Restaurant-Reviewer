@@ -28,4 +28,13 @@
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 50%;
+
+    
+  }
+  .mapboxgl-popup {
+    max-width: 200px;
+  }
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
   }
