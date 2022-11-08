@@ -20,7 +20,15 @@ const NewMap = () =>{
         markerJson.results.data.map((feature) =>{ 
             const center1 = [feature.longitude.replace(/['"]+/g, ''), feature.latitude.replace(/['"]+/g, '')];
             console.log(center1);
-            new mapboxgl.Marker().setLngLat(center1).addTo(map)
+            new mapboxgl.Marker()
+                .setLngLat(center1)
+                .setPopup(
+                    new mapboxgl.Popup({ offset: 25 })
+                    .setHTML(
+                        `<h3>${feature.name}</h3><p>${feature.location_string}</p>`
+                      )
+                )
+                .addTo(map)
         }
         )
 
