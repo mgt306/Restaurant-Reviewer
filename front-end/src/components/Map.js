@@ -1,6 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useState } from 'react';
-import Map, { Marker } from 'react-map-gl';
+import Map, { Marker, NavigationControl } from 'react-map-gl';
 require('dotenv').config()
 console.log(process.env)
 //believe dotenv gets used at build time and not runtime, so app has to be build first? 
@@ -34,6 +34,8 @@ const Mapp = () => {
                             longitude={viewport.longitude}
                             latitude={viewport.latitude}
                         />
+                        <NavigationControl
+                            position='top-right' />
                     </Map>
                 </div>
             )}
