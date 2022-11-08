@@ -53,7 +53,7 @@ export default function Login() {
                 <div className="card-footer">
                     <Link to="/forgot-password">Forgot Password?</Link>
                 <div>
-                    <Link to="/register">Already have an account? Register</Link>
+                    <Link to="/register">Don't have an account? Register</Link>
                 </div>
                 </div>
                 </div>

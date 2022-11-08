@@ -15,7 +15,7 @@ const AboutUs=()=>{
           <a><img src={Ahn} />
             <p></p>
             <artists>Anh Tran</artists>
-            <desc>Hello! I'm a current 4th year student @ NYU studying CS. I use he/him pronouns. I love photography and boxing!</desc>
+            <desc>Hello! I'm currently a 4th year CS Student @ NYU. I use he/him/his pronouns. I love photography and boxing!</desc>
           </a>
           <a><img src={Derek} />
             <p></p>
