@@ -28,9 +28,7 @@ const NewMap = () =>{
         
         //return () => map.remove();
     }, []);
-    return <div className="map-container" 
-    style={{width: '100vw', height: '94vh'}}  
-    ref={mapContainerRef} />;
+    return <div className="map-container" ref={mapContainerRef} />;
 };
 
 export default NewMap;
