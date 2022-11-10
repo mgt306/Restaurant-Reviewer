@@ -7,8 +7,14 @@ import Explore from './Pages/Explore/Explore';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Pages/Login and Register/Login';
 import Register from './Pages/Login and Register/Register';
+import { useEffect, useState } from 'react';
+import jwt_decode from "jwt-decode";
+
 
 function App() {
+
+
+
   return (
     <div>
       <Navbar/>
