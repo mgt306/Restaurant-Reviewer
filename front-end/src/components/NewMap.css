@@ -1,9 +1,7 @@
 .map-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
   }
   
   .sidebarStyle {
@@ -31,3 +29,21 @@
     margin: 4px 2px;
     border-radius: 50%;
   }
+  .mapboxgl-popup {
+    max-width: 200px;
+  }
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: small;
+    border: 5px solid #a3e7f5;
+    border-radius: 30px;
+    background-color: #1e1e1e;
+    color: #a3e7f5;
+  }
+  p{
+    padding-top: 10px;
+    padding-left: 5px;
+    text-align: left;
+  }
+
