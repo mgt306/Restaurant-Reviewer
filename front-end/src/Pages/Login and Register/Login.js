@@ -45,13 +45,14 @@ export default function Login() {
 
     return (
         <>
-        <div id = "signInDiv"></div>
-        {  Object.keys(user).length != 0 &&
-          <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
-        }
-        { user && <div> 
-            <img src={user.picture}></img>
-            <p>{user.name}</p>
+        <div id="signInDiv"></div>
+        
+        { user && <div id="afterSignIn"> 
+            <img id="userpic" src={user.picture}></img>
+            <p id="username">{user.name}</p>
+            {  Object.keys(user).length != 0 &&
+              <button id="signOut" onClick={ (e) => handleSignOut(e)}>Sign Out</button>
+            }
         </div>
         }
         {/* <div className="container">

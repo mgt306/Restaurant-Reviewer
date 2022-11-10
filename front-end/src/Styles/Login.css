@@ -1,3 +1,43 @@
+#signInDiv{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+#afterSignIn{
+    position:absolute;
+    left: 1cm;
+    top: 3cm;
+}
+#userpic{
+    position: relative;
+    left: 50px;
+    border-radius: 30px;
+    border: 2px solid #a3e7f5;
+}
+#userpic:hover{
+    border: 2px solid #fff;
+}
+#username{
+    color:#a3e7f5;
+    padding-top: 20px;
+    position: relative;
+    left: 62px;
+}
+#signOut{
+    top: 20px;
+    border-radius: 30px;
+    background-color: #1e1e1e;
+    border: 2px solid #a3e7f5;
+    color: #a3e7f5;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#signOut:hover{
+    background-color: #a3e7f5;
+    border: 2px solid #1e1e1e;
+    color: #1e1e1e;
+}
 .container{
     position: absolute;
     left: 50%;
@@ -19,14 +59,4 @@ button{
 }
 button:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-.btn-primary{
-    background-color: #a3e7f5;
-    border: 2px solid #1e1e1e;
-    color: #1e1e1e;
-}
-.btn-primary:hover{
-    background-color: #1e1e1e;
-    border: 2px solid #a3e7f5;
-    color: #a3e7f5;
 }

@@ -12,9 +12,6 @@ import jwt_decode from "jwt-decode";
 
 
 function App() {
-
-
-
   return (
     <div>
       <Navbar/>
