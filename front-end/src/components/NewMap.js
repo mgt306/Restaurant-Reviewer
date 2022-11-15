@@ -1,6 +1,7 @@
 import mapboxgl from "mapbox-gl";
 import { useEffect, useRef} from 'react';
 import markerJson from "./restaurants.json";
+import StarIcon from "@mui/icons-material/Star";
 import "./NewMap.css";
 
 mapboxgl.accessToken =
@@ -25,7 +26,23 @@ const NewMap = () =>{
                 .setPopup(
                     new mapboxgl.Popup({ offset: 25 })
                     .setHTML(
-                        `<h3>${feature.name}</h3><p>${feature.location_string}</p>`
+                        `<div className ="card">
+                          <label>Place</label>
+                          <h3 className ="place">${feature.name}</h3>
+                          <label>Review</label>
+                          <p>${feature.location_string}</p>
+                          <label>Ratings</label>
+                          <div classname ="stars">
+                            ${<StarIcon />}
+                            ${<StarIcon />}
+                            ${<StarIcon />}
+                            ${<StarIcon />}
+                            ${<StarIcon />}
+                          </div>
+                          <label>Info</label>
+                          <span className="username">Username</span>
+                          <span className="timestamp">Time</span>
+                        </div>`
                       )
                 )
                 .addTo(map)
@@ -36,7 +53,8 @@ const NewMap = () =>{
         
         //return () => map.remove();
     }, []);
-    return <div className="map-container" ref={mapContainerRef} />;
+    return <div className="map-container" ref={mapContainerRef}>
+    </div>;
 };
 
 export default NewMap;
