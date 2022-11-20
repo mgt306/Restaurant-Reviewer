@@ -6,11 +6,11 @@ import jwt_decode from "jwt-decode";
 
 export default function Login() {
     
-    // const [loading, setLoading] = useState(false);
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setLoading(true);
-    // }
+    const [loading, setLoading] = useState(false);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+    }
     const [user, setUser] = useState({});
 
     function handleCallbackResponse(response) {
@@ -45,17 +45,7 @@ export default function Login() {
 
     return (
         <>
-        <div id="signInDiv"></div>
-        
-        { user && <div id="afterSignIn"> 
-            <img id="userpic" src={user.picture}></img>
-            <p id="username">{user.name}</p>
-            {  Object.keys(user).length != 0 &&
-              <button id="signOut" onClick={ (e) => handleSignOut(e)}>Sign Out</button>
-            }
-        </div>
-        }
-        {/* <div className="container">
+        <div className="container">
             <div className="row">
             <div className="col-md-6 offset-md-3">
                 <div className="card">
@@ -97,10 +87,22 @@ export default function Login() {
                     <Link to="/register">Don't have an account? Register</Link>
                 </div>
                 </div>
+                <div>
+                <div id="signInDiv"></div>
+        
+        { user && <div id="afterSignIn"> 
+            <img id="userpic" src={user.picture}></img>
+            <p id="username">{user.name}</p>
+            {  Object.keys(user).length != 0 &&
+              <button id="signOut" onClick={ (e) => handleSignOut(e)}>Sign Out</button>
+            }
+        </div>
+        }
+                </div>
                 </div>
             </div>
             </div>
-        </div> */}
+        </div>
         </>
     );
     }

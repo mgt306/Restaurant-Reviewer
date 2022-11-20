@@ -29,6 +29,8 @@ const NewMap = () =>{
                         `<div className ="card">
                           <label>Place</label>
                           <h3 className ="place">${feature.name}</h3>
+                          <label>Address</label>
+                          <p className ="address">${feature.address}</p>
                           <label>Review</label>
                           <p>${feature.location_string}</p>
                           <label>Ratings</label>
