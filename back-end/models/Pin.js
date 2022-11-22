@@ -2,20 +2,11 @@ const mongoose = require("mongoose");
 
 const PinSchema = new mongoose.Schema(
     {
-      username: {
-        type: String,
-        required: true,
-      },
       title: {
         type: String,
         required: true,
         min: 3,
         max: 60,
-      },
-      desc: {
-        type: String,
-        required: true,
-        min: 3,
       },
       foodRating: {
         type: Number,

@@ -34,13 +34,13 @@ const NewMap = () =>{
                           <label>Review</label>
                           <p>${feature.location_string}</p>
                           <label>Ratings</label>
-                          <div classname ="stars">
-                            ${<StarIcon />}
-                            ${<StarIcon />}
-                            ${<StarIcon />}
-                            ${<StarIcon />}
-                            ${<StarIcon />}
-                          </div>
+                          ${<div classname ="stars">
+                            <StarIcon />
+                            <StarIcon />
+                            <StarIcon />
+                            <StarIcon />
+                            <StarIcon />
+                          </div>}
                           <label>Info</label>
                           <span className="username">Username</span>
                           <span className="timestamp">Time</span>

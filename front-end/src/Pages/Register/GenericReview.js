@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./GenericReview.css";
 import { useState, useEffect } from "react";
 import { React } from "react";
-import { axios } from "axios";
+import axios from "axios";
 
 const GenericReview = props => {
     const [review, setReview] = useState({
@@ -27,6 +27,27 @@ const GenericReview = props => {
         password: ""
     });
 
+    const handleSubmit = async () =>{
+        const newReview = {
+            id: review.id,
+            title: review.title,
+            description: review.description,
+            ambianceRating: review.ambianceRating,
+            foodRating: review.foodRating,
+            serviceRating: review.serviceRating,
+            priceRating: review.priceRating,
+            overallRating: review.overallRating,
+            userId: review.userId,
+            restaurantId: review.restaurantId,
+        };
+        try{
+            const res = await axios.post("http://localhost:8800/api/reviews", newReview);
+            setReview([...review, res.data]);
+        } catch (err){
+            console.log(err);
+        }
+    };
+
     return (
         <div className="container">
             <div className="row">
@@ -36,7 +57,7 @@ const GenericReview = props => {
                             <h3>Review</h3>
                         </div>
                         <div className="card-body">
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="title">Title</label>
                                     <input
