@@ -54,5 +54,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "proxy": "http://localhost:8800/api"
 }

@@ -8,7 +8,7 @@ console.log(process.env)
 
 const Mapp = () => {
     const [viewport, setViewport] = useState([]);
-    
+    const [userLoc, setUserLoc] = useState([]);
     useEffect(() =>{
         navigator.geolocation.getCurrentPosition((pos) => {
             setViewport({
@@ -18,6 +18,10 @@ const Mapp = () => {
                 zoom: 15,
                 pitch: 45,
             });
+            setUserLoc({
+                latitude: pos.coords.latitude,
+                longitude: pos.coords.longitude,
+            })
         });
     }, []);
     
@@ -25,8 +29,8 @@ const Mapp = () => {
     useEffect(() => {
         const getPins = async () => {
           try {
-            const allPins = await axios.get("http://localhost:8800/api/pins");
-            setPins(allPins.data);
+            const restaurants = await axios.get("/pins");
+            setPins(restaurants.data);
           } catch (err) {
             console.log(err);
           }
@@ -34,26 +38,35 @@ const Mapp = () => {
         getPins();
     }, []);
 
+    const [currentPlaceId, setCurrentPlaceId] = useState([]);
+    const handleMarkerClick = (id, lat, long) => {
+        setCurrentPlaceId({id: id, longitude: long, latitude: lat});
+        setViewport({ ...viewport, latitude: lat, longitude: long, zoom: 15, pitch: 45 });
+    };
+
     return (  
         <div>
-            {viewport.latitude && viewport.longitude &&(
+            {userLoc.latitude && userLoc.longitude &&(
                 <div>
                     <ReactMapGL className="Original"
                         mapboxAccessToken = {"pk.eyJ1IjoiYW5odHJyIiwiYSI6ImNsOW9kbGtwazBnbTAzd281YXJ3ejhjcmsifQ.Et0LpdRG7mN6MB58p_52qQ"}
                         initialViewState={viewport}
                         style={{position: 'fixed', width: "100%", height: "100%"}}
                         mapStyle="mapbox://styles/anhtrr/cl9odtk6b001v15s1cq54igry"
-                        onRender={(event) => event.target.resize()}
+                        onRender={(event) => event.target.resize(viewport)} 
                     >
-                        {pins.map((p)=>{
-                            <Marker 
-                            latitude={p.lat}
-                            longitude={p.long}
-                            />
-                        })}
+                        {pins.map((p)=>
+                            <>
+                                <Marker     
+                                    latitude={p.latitude}
+                                    longitude={p.longitude}
+                                    onClick={() => handleMarkerClick(p._id, p.latitude, p.longitude)}
+                                />
+                            </>
+                        )}
                         <Marker
-                            longitude={viewport.longitude}
-                            latitude={viewport.latitude}
+                            longitude={userLoc.longitude}
+                            latitude={userLoc.latitude}
                             color="#fff"
                         />
                         <NavigationControl

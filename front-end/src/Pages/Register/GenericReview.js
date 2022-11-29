@@ -27,9 +27,9 @@ const GenericReview = props => {
         password: ""
     });
 
-    const handleSubmit = async () =>{
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
         const newReview = {
-            id: review.id,
             title: review.title,
             description: review.description,
             ambianceRating: review.ambianceRating,
@@ -38,13 +38,13 @@ const GenericReview = props => {
             priceRating: review.priceRating,
             overallRating: review.overallRating,
             userId: review.userId,
-            restaurantId: review.restaurantId,
-        };
-        try{
-            const res = await axios.post("http://localhost:8800/api/reviews", newReview);
-            setReview([...review, res.data]);
-        } catch (err){
-            console.log(err);
+            restaurantId: review.restaurantId
+        }
+        try {
+            const resp = await axios.post('/reviews', newReview);
+            console.log(resp.data);
+        } catch (error) {
+            console.log(error.response);
         }
     };
 

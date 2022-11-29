@@ -2,22 +2,16 @@ const mongoose = require("mongoose");
 
 const ReviewSchema = new mongoose.Schema(
     {
-      id: {
+      title: {
         type: String,
         required: true,
         min: 1,
         max: 60,
       },
-      title: {
-        type: String,
-        required: true,
-        min: 5,
-        max: 60,
-      },
       description: {
         type: String,
         required: false,
-        min: 0,
+        min: 1,
         max: 200,
       },
       ambianceRating: {

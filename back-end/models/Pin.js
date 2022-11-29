@@ -2,30 +2,26 @@ const mongoose = require("mongoose");
 
 const PinSchema = new mongoose.Schema(
     {
-      title: {
+      name: {
         type: String,
         required: true,
         min: 3,
         max: 60,
       },
-      foodRating: {
-        type: Number,
-        required: true,
-        min: 0,
-        max: 5,
-      },
-      vibesRating: {
-        type: Number,
-        required: true,
-        min: 0,
-        max: 5,
-      },
-      long: {
+      longitude: {
         type: Number,
         required: true,
       },
-      lat: {
+      latitude: {
         type: Number,
+        required: true,
+      },
+      address: {
+        type: String,
+        required: true,
+      },
+      location_string: {
+        type: String,
         required: true,
       },
     },

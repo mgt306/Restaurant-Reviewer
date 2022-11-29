@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Review = require("../models/Review");
 
-// creating pins 
+
 router.post("/", async (req, res) => {
   const newReview = new Review(req.body);
   try {
@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// fetching all pins
+
 router.get("/", async (req, res) => {
   try {
     const reviews = await Review.find();
