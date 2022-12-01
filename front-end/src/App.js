@@ -13,6 +13,33 @@ import jwt_decode from "jwt-decode";
 
 
 function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const getUser = () => {
+      fetch("http://localhost:3000/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((resObject) => {
+          setUser(resObject.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+
+  
   return (
     <div>
       <Navbar/>
@@ -23,6 +50,7 @@ function App() {
             <Route path ='/profile' element={<Profile/>}/>
             <Route path ='/explore' element={<Explore/>}/>
             <Route path ='*' element={ <Navigate to ='/'/> } />
+            <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
             <Route path = '/login' element={<Login/>}/>
             <Route path = '/register' element={<Register/>}/>
             <Route path = '/review' element={<GenericReview/>}/>
