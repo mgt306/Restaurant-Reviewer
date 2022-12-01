@@ -22,31 +22,31 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-// passport.use(
-//   new GithubStrategy(
-//     {
-//       clientID: GITHUB_CLIENT_ID,
-//       clientSecret: GITHUB_CLIENT_SECRET,
-//       callbackURL: "/auth/github/callback",
-//     },
-//     function (accessToken, refreshToken, profile, done) {
-//       done(null, profile);
-//     }
-//   )
-// );
+passport.use(
+  new GithubStrategy(
+    {
+      clientID: "40f2f577caa75c5d6da9",
+      clientSecret: "3f731399aa8a215f64503c14e070e96c729c1806",
+      callbackURL: "/auth/github/callback",
+    },
+    function (accessToken, refreshToken, profile, done) {
+      done(null, profile);
+    }
+  )
+);
 
-// passport.use(
-//   new FacebookStrategy(
-//     {
-//       clientID: FACEBOOK_APP_ID,
-//       clientSecret: FACEBOOK_APP_SECRET,
-//       callbackURL: "/auth/facebook/callback",
-//     },
-//     function (accessToken, refreshToken, profile, done) {
-//       done(null, profile);
-//     }
-// )
-// );
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: "1187088248572125",
+      clientSecret: "57826649ecefeb3888fb59592125156f",
+      callbackURL: "/auth/facebook/callback",
+    },
+    function (accessToken, refreshToken, profile, done) {
+      done(null, profile);
+    }
+)
+);
 
 passport.serializeUser(function(user, done) {
     done(null, user);
