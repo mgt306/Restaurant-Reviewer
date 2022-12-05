@@ -1,7 +1,7 @@
 ## Description of Restaurant Reviewer
 
 # Product Vision
- For students, and adults alike, Restaurant Reivewer allows users to rate more aspects of a restaurant. Some of these are staff, ambiance, and service. 
+ For students, and adults alike, Restaurant Reviewer allows users to rate more aspects of a restaurant. Some of these are staff, ambiance, and service. 
 
 
 
@@ -19,7 +19,7 @@ Restaurant Reviewer was created as a student project in a class named "Remote De
 
 ## How to build and test the project
 
-Open the front end, and use npm install if necessary to download all dependencies. Then run npm start. 
+Open the front end, and use npm install to download all dependencies. Then run npm start. Repeat after changing into the backend directory. 
 
 ## Additional info and documents
 
