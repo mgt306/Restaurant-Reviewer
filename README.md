@@ -23,5 +23,5 @@ Open the front end, and use npm install if necessary to download all dependencie
 
 ## Additional info and documents
 
-N/A
+Confluence Wiki: https://ttyd-recipe-book.atlassian.net/wiki/spaces/restaurantreviewer/pages/9207809/User+Guide
 
