@@ -73,7 +73,6 @@ mongoose
     .then(()=> console.log("mongoDB connected!"))
     .catch((err) => console.log(err));
 
-app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 app.use("/api/reviews", reviewRoute);
 
