@@ -60,10 +60,39 @@ const Mapp = () => {
                                 <Marker     
                                     latitude={p.latitude}
                                     longitude={p.longitude}
-                                    onClick={() => handleMarkerClick(p._id, p.latitude, p.longitude)}
+                                    onClick={() => handleMarkerClick(p._id, p.lat, p.long)}
                                 />
+                            
+                            {p._id === currentPlaceId &&(
+                                <Popup
+                                    key={p._id}
+                                    latitude={p.latitude}
+                                    longitude={p.longitude}
+                                    closeButton={true}
+                                    closeOnClick={false}
+                                    onClose={() => setCurrentPlaceId(null)}
+                                    anchor="left"
+                                >
+                                    <div className='card' style={{color:"#1e1e1e", fontWeight:"bolder", alignContent:"center"}}>
+                                        <h4 className='place'>{p.name}</h4>
+                                        <p className ="address">{p.address}</p>
+                                        <div className='review'>
+                                            <p className='reviewTitle'>
+                                                "{p.review.title}"<br/>
+                                                {p.review.description}<br/><br/>
+                                                Overall Rating: {p.review.overallRating}/5<br/><br/>
+                                                Food Rating: {p.review.foodRating}/5<br/>
+                                                Service Rating: {p.review.serviceRating}/5<br/>
+                                                Price Rating: {p.review.priceRating}/5<br/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </Popup>
+                                
+                            )}
                             </>
                         )}
+                        
                         <Marker
                             longitude={userLoc.longitude}
                             latitude={userLoc.latitude}
