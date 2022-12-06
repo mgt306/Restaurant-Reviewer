@@ -5,8 +5,10 @@ in accordance with the requirements of the CS department at NYU */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
+import router from "../../../back-end/routes/users";
 
-export const SearchResults = () => {
+
+router.post("/searchResults", async (req, res) => {
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState(false);
   const location = useLocation();
@@ -33,6 +35,6 @@ export const SearchResults = () => {
       ))}
     </div>
   )
-}
+})
 
 export default SearchResults;

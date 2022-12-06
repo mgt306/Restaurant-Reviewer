@@ -4,16 +4,16 @@ import AboutUs from './Pages/About/AboutUs';
 import Home from './Pages/Home/Home';
 import Profile from './Pages/Profile/Profile';
 import Explore from './Pages/Explore/Explore';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate} from 'react-router-dom';
 import Login from './Pages/Login and Register/Login';
 import Register from './Pages/Login and Register/Register';
 import GenericReview from './Pages/Register/GenericReview';
 import Search from './components/Search';
-import { ChakraProvider } from '@chakra-ui/react'
+// import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
-    <ChakraProvider>
+    // <ChakraProvider>
     <div>
       <Navbar/>
         <main>
@@ -30,7 +30,7 @@ function App() {
           </Routes>
         </main>
     </div>
-    </ChakraProvider>
+    // </ChakraProvider>
   );
 }
 
