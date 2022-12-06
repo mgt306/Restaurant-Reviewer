@@ -1,6 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import { useEffect, useRef} from 'react';
-import markerJson from "./restaurants.json";
+import markerJson from "./newrestaurants.json";
 import StarIcon from "@mui/icons-material/Star";
 import "./NewMap.css";
 
@@ -18,8 +18,8 @@ const NewMap = () =>{
             pitch:45,
           });
         
-        markerJson.results.data.map((feature) =>{ 
-            const center1 = [feature.longitude.replace(/['"]+/g, ''), feature.latitude.replace(/['"]+/g, '')];
+        markerJson.results.map((feature) =>{ 
+            const center1 = [feature.geometry.location.lng, feature.geometry.location.lat];
             console.log(center1);
             new mapboxgl.Marker()
                 .setLngLat(center1)
@@ -30,9 +30,11 @@ const NewMap = () =>{
                           <label>Place</label>
                           <h3 className ="place">${feature.name}</h3>
                           <label>Address</label>
-                          <p className ="address">${feature.address}</p>
+                          <p className ="address">${feature.vicinity}</p>
                           <label>Review</label>
-                          <p>${feature.location_string}</p>
+                          <p>${feature.rating}</p>
+                          <label>Number of reviews</label>
+                          <p>${feature.user_ratings_total}</p>
                         </div>`
                       )
                 )
