@@ -55,5 +55,5 @@
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
-  "http://localhost:3001/api"
+  "proxy":"http://localhost:3001/api"
 }

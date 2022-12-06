@@ -40,7 +40,7 @@ const Mapp = () => {
 
     const [currentPlaceId, setCurrentPlaceId] = useState([]);
     const handleMarkerClick = (id, lat, long) => {
-        setCurrentPlaceId({id: id, longitude: long, latitude: lat});
+        setCurrentPlaceId(id);
         setViewport({ ...viewport, latitude: lat, longitude: long, zoom: 15, pitch: 45 });
     };
 
