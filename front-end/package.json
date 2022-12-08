@@ -53,7 +53,8 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.20"
   },
-  "proxy":"http://localhost:3001/api"
+  "proxy": "http://localhost:3001/api"
 }
