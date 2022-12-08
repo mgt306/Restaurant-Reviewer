@@ -1,4 +1,9 @@
 {
+  "homepage": "http://mgt306.github.io/Restaurant-Reviewer",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "express-session": "^1.17.3",
     "passport": "^0.6.0",
