@@ -15,14 +15,13 @@ const path = require("path");
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors())
 
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "front-end", "build")));
 
 app.use(express.json());
-
+/*
 app.use(
     cors({
       origin: "http://localhost:3000",
@@ -30,8 +29,15 @@ app.use(
       credentials: true,
     })
   );
+*/
+const corsOptions = {
+  origin:'*', 
+   credentials:true,            
+   optionSuccessStatus:200
+};
+app.use(cors(corsOptions));      
   
-  app.use("/auth", authRoute);
+app.use("/auth", authRoute);
 
 //FOR PASSPORT.JS
 function isSignedIn(req, res, next) {
