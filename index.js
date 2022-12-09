@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const session = require("express-session")
 const passport = require("passport")
@@ -6,7 +7,6 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 const port = process.env.PORT || 3001;
-const cors = require("cors")
 const userRoute = require("./routes/users");
 const pinRoute = require("./routes/pins");
 const reviewRoute = require("./routes/reviews");
