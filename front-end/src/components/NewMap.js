@@ -1,4 +1,5 @@
-import mapboxgl from "!mapbox-gl";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 import { useEffect, useRef} from 'react';
 import markerJson from "./restaurants.json";
 import StarIcon from "@mui/icons-material/Star";
@@ -6,7 +7,7 @@ import "./NewMap.css";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYW5odHJyIiwiYSI6ImNsOW9kbGtwazBnbTAzd281YXJ3ejhjcmsifQ.Et0LpdRG7mN6MB58p_52qQ";
-
+mapboxgl.workerClass = MapboxWorker;
 const NewMap = () =>{
     const mapContainerRef = useRef(null);
     useEffect(() => {
