@@ -81,7 +81,7 @@ function isSignedIn(req, res, next) {
   //END for PASSPORT.JS
 
 mongoose
-    .connect(process.env.mongoURI, {
+    .connect("mongodb+srv://newuser:restaurantreviewer@cluster0.y0tshry.mongodb.net/?retryWrites=true&w=majority", {
         useNewUrlParser: true,
     })
     .then(()=> console.log("mongoDB connected!"))
