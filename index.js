@@ -12,6 +12,7 @@ const pinRoute = require("./routes/pins");
 const reviewRoute = require("./routes/reviews");
 const authRoute = require("./routes/auth");
 const path = require("path");
+const CONNECTIONURI = process.env.mongoURI;
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -38,6 +39,10 @@ const corsOptions = {
 app.use(cors(corsOptions));      
   
 app.use("/auth", authRoute);
+
+app.get('/', (req, res) => {
+  res.send('APP IS RUNNING')
+})
 
 //FOR PASSPORT.JS
 function isSignedIn(req, res, next) {
@@ -82,6 +87,11 @@ mongoose
     .then(()=> console.log("mongoDB connected!"))
     .catch((err) => console.log(err));
 
+/*
+mongoose.connect(process.env.mongoURI)
+  .then(() => app.listen(port, () => console.log(`Server Running on Port: http://localhost:${port}`)))
+  .catch((error) => console.log(`${error} did not connect`));
+*/
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 app.use("/api/reviews", reviewRoute);
