@@ -1,4 +1,4 @@
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "!mapbox-gl";
 import { useEffect, useRef} from 'react';
 import markerJson from "./restaurants.json";
 import StarIcon from "@mui/icons-material/Star";
