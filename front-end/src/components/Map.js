@@ -29,10 +29,12 @@ const Mapp = () => {
     useEffect(() => {
         const getPins = async () => {
           try {
-            const restaurants = await axios.get("/pins");
+            const restaurants = await axios.get("/api/pins");
             setPins(restaurants.data);
+            console.log(restaurants.data);
           } catch (err) {
-            console.log(err);
+            console.log(err.response.data);
+            console.log("no pins");
           }
         };
         getPins();
