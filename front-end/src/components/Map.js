@@ -1,5 +1,8 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+import 'mapbox-gl/dist/mapbox-gl-csp.js';
+import MapboxGLWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker.js';
+
 import { useEffect, useState } from 'react';
 import Map, { Marker, NavigationControl, Popup } from 'react-map-gl';
 // require('dotenv').config()

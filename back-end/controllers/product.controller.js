@@ -2,7 +2,7 @@
 
 const router = require("express").Router();
 
-router.get("/search") = async (req, res, next) => {
+router.get("/search"), async (req, res) => {
     try {
         const { q } = req.query;
         const restaurant = await Product.find({ name: { $regex: q, $options: 'i' } });
@@ -19,7 +19,7 @@ router.get("/search") = async (req, res, next) => {
     }
 };
 
-router.post("/search") = async (req, res, next) => {
+router.post("/search"),async(req, res, next) => {
     try {
         const { q } = req.query;
         const restaurant = await Product.find({ name: { $regex: q, $options: 'i' } });
