@@ -21,7 +21,8 @@ app.use(
   );
   
 mongoose
-    .connect(process.env.mongoURL, {
+    .set('strictQuery', true)
+    .connect('mongodb+srv://admin:restaurantreviewer@cluster0.y0tshry.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
     })
     .then(()=> console.log("mongoDB connected!"))

@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.17",
+    "@popperjs/core": "^2.11.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -43,11 +44,8 @@
   "browserslist": {
     "production": [
       ">0.2%",
-        "not dead",
-        "not ie 11",
-        "not chrome < 51",
-        "not safari < 10",
-        "not android < 51"
+      "not dead",
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
