@@ -1,0 +1,27 @@
+.search-wrapper {
+    position: relative;
+    margin-top: 50px;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    width: 500px;
+    border: 1px solid #E1E1E1;
+}
+
+.form-control:focus {
+    border-color: cyan
+}
+
+.search-button {
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: aqua;
+    line-height: normal;
+    width: 50px;
+    height: 100%;
+    border: none;
+}

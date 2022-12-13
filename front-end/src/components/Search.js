@@ -1,37 +1,39 @@
-//Made with the help of https://www.telerik.com/blogs/how-to-implement-standard-search-using-react in accordance with the requirements of the CS department at NYU
-
-import React, { useState} from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
-// import { Input, InputGroup, InputRightElement } from '@chakra-ui/react'
-
-export const SearchInput = () => {
-  const [search, setSearch] = useState("");
-  const navigate = useNavigate();
-  const params = { query: search };
-  const goToSearch = () =>
-    navigate({
-        pathname: '/search',
-        search: `?${createSearchParams(params)}`,
-    });
-
-  return (
-    <div>
-        {/* <InputGroup> */}
-            <input
-            onChange={(e) => {
-            setSearch(e.target.value)
-            }}
-            type="search"
-            placeholder="Search restaurant"
-            />
-            {/* <InputRightElement> */}
-                <div>
-                <button onClick={goToSearch}>Search</button>
+import { useEffect } from "react";
+import { BsSearch } from "react-icons/bs";
+import { useState } from "react";
+import '../Styles/Search.css'
+import axios from "axios";
+export default function Search() {
+    const [searchResult, setSearchResult] = useState([]);
+    const [key, setKey] = useState("");
+    useEffect (() => {
+        const search = async () => {
+            try {
+                if (!key.trim()) {
+                    setSearchResult([]);
+                    return;
+                }
+                const res = await axios.get("http://localhost:3001/rest")
+            } catch (error) {
+                console.log(error);   
+            }
+        }
+        search();
+    }, [])
+    return (
+        <form>
+            <div className = "search-wrapper">
+                <button className = "search-button"><BsSearch /> </button>
+                <div classname = "form-group">
+                    <input 
+                    type="text" 
+                    className = "form-control"
+                    placeholder="Search for a restaurant"
+                    value={key}
+                    onChange={(e) => setKey(e.target.value)}
+                    />
                 </div>
-            {/* </InputRightElement> */}
-        {/* </InputGroup> */}
-    </div>
-  )
+            </div>
+        </form>
+    )
 }
-
-export default SearchInput;

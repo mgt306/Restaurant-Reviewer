@@ -9,6 +9,7 @@ import Login from './Pages/Login and Register/Login';
 import Register from './Pages/Login and Register/Register';
 import GenericReview from './Pages/Register/GenericReview';
 import Search from './components/Search';
+
 // import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
