@@ -10,6 +10,7 @@ import Register from './Pages/Login and Register/Register';
 import GenericReview from './Pages/Register/GenericReview';
 import { useEffect, useState } from 'react';
 import jwt_decode from "jwt-decode";
+import Search from './components/Search';
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
             <Route path = '/login' element={<Login/>}/>
             <Route path = '/register' element={<Register/>}/>
             <Route path = '/review' element={<GenericReview/>}/>
+            <Route path = '/search' element={<Search/>}/>
           </Routes>
         </main>
     </div>

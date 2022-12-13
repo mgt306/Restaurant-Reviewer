@@ -22,4 +22,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/search", async (req, res) => {
+  try {
+    const pins = await Pin.find({ name : req.body.name});
+    res.status(200).json(pins);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
