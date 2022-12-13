@@ -37,6 +37,7 @@
 .p2-about{
     align-items: center;
     justify-content: center;
+    max-width: 50%;
     font-size: calc(1em + 0.5vmin); 
     color: #a3e7f5;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -84,6 +85,27 @@
 .aboutProj{
   text-orientation: upright;
   grid-template-columns: fit-content(100%);
+  min-width: 1000px;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(163, 231, 245, 1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgb(9, 82, 79);
 }
 
 .wrapper {
