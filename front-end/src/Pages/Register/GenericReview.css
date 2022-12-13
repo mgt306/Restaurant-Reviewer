@@ -1,3 +1,19 @@
-.container {
-    top: 20%;
+.container{
+    align-items: center;
+    top:30%;
+    left:10%;
+}
+.card{
+    min-width: 90vw;
+    max-width: 90vw;
+    background-color: #b3c2c2;
+}
+.headings{
+    color:black;
+    font-style: normal;
+    padding: 3px;
+}
+.form-control{
+    border-color:#a3e7f5;
+    border-width: 3px;
 }
