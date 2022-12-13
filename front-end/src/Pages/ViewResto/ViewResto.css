@@ -1,0 +1,21 @@
+.restaurantProfile{
+    
+}
+.restaurantlabels{
+    padding-top: 40px;
+}
+.restaurantinfo{
+    color: #a3e7f5;
+    text-align: left;
+    padding-left: 30px;
+}
+.restaurantImage{
+    width: 5cm;
+    border-radius: 30px;
+    border: 5px solid #a3e7f5;
+    padding-left: 30px;
+    object-fit: cover;
+}
+.restoo{
+    padding: 30px;
+}

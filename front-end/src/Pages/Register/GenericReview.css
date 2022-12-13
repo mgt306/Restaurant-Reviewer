@@ -1,3 +1,37 @@
-.container {
-    top: 20%;
+.container{
+    align-items: center;
+    top:30%;
+    left:15%;
+}
+.card{
+    min-width: 90vw;
+    max-width: 90vw;
+    background-color: #b3c2c2;
+}
+.headings{
+    color:black;
+    font-style: normal;
+    padding: 3px;
+}
+.form-control{
+    border-color:#a3e7f5;
+    border-width: 3px;
+}
+button{
+    position:relative;
+    margin-top: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-primary{
+    background-color: #a3e7f5;
+    border: 2px solid #1e1e1e;
+    color: #1e1e1e;
+}
+.btn-primary:hover{
+    background-color: #1e1e1e;
+    border: 2px solid #a3e7f5;
+    color: #a3e7f5;
 }

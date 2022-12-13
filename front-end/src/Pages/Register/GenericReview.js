@@ -1,47 +1,43 @@
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./GenericReview.css";
 import { useState, useEffect } from "react";
 import { React } from "react";
 import axios from "axios";
 
 const GenericReview = props => {
-    const [review, setReview] = useState({
-        id: "",
-        title: "",
-        description: "",
-        ambianceRating: "",
-        foodRating: "",
-        serviceRating: "",
-        priceRating: "",
-        overallRating: "",
-        date: "",
-        userId: "",
-        restaurantId: ""
-    });
     
-    const [user, setUser] = useState({
-        id: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: ""
+    let RestaurantId = useParams();
+    
+    let idd = "/pins/"+RestaurantId.RestaurantId;
+
+    const [review, setReview] = useState({
+        title: "",
+        ambianceRating: 0,
+        foodRating: 0,
+        serviceRating: 0,
+        priceRating: 0,
+        overallRating: 0,
+        postedBy:{
+            username: "",
+        }
     });
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        const newReview = {
+        const newReview = { reviews:{
             title: review.title,
-            description: review.description,
             ambianceRating: review.ambianceRating,
             foodRating: review.foodRating,
             serviceRating: review.serviceRating,
             priceRating: review.priceRating,
             overallRating: review.overallRating,
-            userId: review.userId,
-            restaurantId: review.restaurantId
+            postedBy: {
+                username: review.postedBy.username
+            }
+        }
         }
         try {
-            const resp = await axios.post('/reviews', newReview);
+            const resp = await axios.put(String(idd), newReview);
             console.log(resp.data);
         } catch (error) {
             console.log(error.response);
@@ -51,7 +47,7 @@ const GenericReview = props => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-6 offset-md-3">
+                <div className="bruh">
                     <div className="card">
                         <div className="card-header">
                             <h3>Review</h3>
@@ -59,7 +55,7 @@ const GenericReview = props => {
                         <div className="card-body">
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="title">Title</label>
+                                    <label className='headings' htmlFor="title">Title</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -70,31 +66,33 @@ const GenericReview = props => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="description">Description</label>
+                                    <label className='headings' htmlFor="username">Your Name</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="description"
-                                        placeholder="Enter description"
-                                        value={review.description}
-                                        onChange={e => setReview({ ...review, description: e.target.value })}
+                                        id="overallRating"
+                                        placeholder="Enter your name"
+                                        value={review.postedBy.username}
+                                        onChange={e => setReview({ ...review, postedBy: {username: e.target.value} })}
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="ambianceRating">Ambiance Rating</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="ambianceRating"
-                                        placeholder="Enter ambiance rating"
-                                        value={review.ambianceRating}
-                                        onChange={e => setReview({ ...review, ambianceRating: e.target.value })}
-                                    />
+                                    <label className='headings' htmlFor="ambianceRating">Ambiance Rating</label>
+                                    <div className="ratings">
+                                        <input
+                                            type="Number"
+                                            className="form-control"
+                                            id="ambianceRating"
+                                            placeholder="Enter ambiance rating"
+                                            value={review.ambianceRating}
+                                            onChange={e => setReview({ ...review, ambianceRating: e.target.value })}
+                                        />                                        
+                                    </div>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="foodRating">Food Rating</label>
+                                    <label className='headings' htmlFor="foodRating">Food Rating</label>
                                     <input
-                                        type="text"
+                                        type="Number"
                                         className="form-control"
                                         id="foodRating"
                                         placeholder="Enter food rating"
@@ -103,9 +101,9 @@ const GenericReview = props => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="serviceRating">Service Rating</label>
+                                    <label className='headings' htmlFor="serviceRating">Service Rating</label>
                                     <input
-                                        type="text"
+                                        type="Number"
                                         className="form-control"
                                         id="serviceRating"
                                         placeholder="Enter service rating"
@@ -114,9 +112,9 @@ const GenericReview = props => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="priceRating">Price Rating</label>
+                                    <label className='headings' htmlFor="priceRating">Price Rating</label>
                                     <input
-                                        type="text"
+                                        type="Number"
                                         className="form-control"
                                         id="priceRating"
                                         placeholder="Enter price rating"
@@ -125,47 +123,14 @@ const GenericReview = props => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="overallRating">Overall Rating</label>
+                                    <label className='headings' htmlFor="overallRating">Overall Rating</label>
                                     <input
-                                        type="text"
+                                        type="Number"
                                         className="form-control"
                                         id="overallRating"
                                         placeholder="Enter overall rating"
                                         value={review.overallRating}
                                         onChange={e => setReview({ ...review, overallRating: e.target.value })}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="date">Date</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="date"
-                                        placeholder="Enter date"
-                                        value={review.date}
-                                        onChange={e => setReview({ ...review, date: e.target.value })}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="userId">User Id</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="userId"
-                                        placeholder="Enter user id"
-                                        value={review.userId}
-                                        onChange={e => setReview({ ...review, userId: e.target.value })}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="restaurantId">Restaurant Id</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="restaurantId"
-                                        placeholder="Enter restaurant id"
-                                        value={review.restaurantId}
-                                        onChange={e => setReview({ ...review, restaurantId: e.target.value })}
                                     />
                                 </div>
                                 <button type="submit" className="btn btn-primary">Submit</button>
