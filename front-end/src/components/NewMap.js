@@ -1,7 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import { useEffect, useRef} from 'react';
 import markerJson from "./restaurants.json";
-import StarIcon from "@mui/icons-material/Star";
 import "./NewMap.css";
 
 mapboxgl.accessToken =
@@ -30,9 +29,9 @@ const NewMap = () =>{
                           <label>Place</label>
                           <h3 className ="place">${feature.name}</h3>
                           <label>Address</label>
-                          <p className ="address">${feature.address}</p>
-                          <label>Review</label>
-                          <p>${feature.location_string}</p>
+                          <h5 className ="address">${feature.address}</h5>
+                          <label>Location</label>
+                          <h5>${feature.location_string}</h5>
                         </div>`
                       )
                 )
