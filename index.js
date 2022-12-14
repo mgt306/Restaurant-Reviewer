@@ -1,24 +1,23 @@
 const express = require("express");
-const session = require("express-session")
-const passport = require("passport")
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 const cors = require("cors")
 const pinRoute = require("./routes/pins");
+const path = require("path");
 
 require("dotenv").config();
 
 app.use(express.json());
 
-app.use(
-    cors({
-      origin: "http://localhost:3000",
-      methods: "GET,POST,PUT,DELETE",
-      credentials: true,
-    })
-  );
+
+const corsOptions = {
+  origin:'*', 
+   credentials:true,            
+   optionSuccessStatus:200
+};
+app.use(cors(corsOptions));
   
 mongoose
     .set('strictQuery', true)
@@ -27,8 +26,6 @@ mongoose
     })
     .then(()=> console.log("mongoDB connected!"))
     .catch((err) => console.log(err));
-
-app.use("/api/pins", pinRoute);
 
 const listener = app.listen(port, function () {
   console.log(`Server running on port: ${port}`)
@@ -42,3 +39,14 @@ const close = () => {
 module.exports = {
   close: close,
 }
+app.use("/api/pins", pinRoute);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "front-end", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "front-end", "build", "index.html"));
+  });
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "front-end", "build", "index.html"));
+  });
+}
+app.listen();

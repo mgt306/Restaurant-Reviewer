@@ -94,4 +94,11 @@
   ::-webkit-scrollbar-thumb:window-inactive {
       background: rgb(9, 82, 79); 
   }
+  .linkk{
+    color:#a3e7f5;
+  }
+  .linkk:hover{
+    color:#6dd2e6;
+    text-shadow: #f4f9db;
+  }
 

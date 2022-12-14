@@ -5,7 +5,7 @@ import axios from "axios";
 import StarIcon from '@mui/icons-material/Star';
 import { format } from "timeago.js";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 require('dotenv').config()
 console.log(process.env)
 //believe dotenv gets used at build time and not runtime, so app has to be build first? 
@@ -33,7 +33,7 @@ const Mapp = () => {
     useEffect(() => {
         const getPins = async () => {
           try {
-            const restaurants = await axios.get("/pins");
+            const restaurants = await axios.get("/api/pins");
             setPins(restaurants.data);
           } catch (err) {
             console.log(err);
@@ -87,7 +87,7 @@ const Mapp = () => {
                                     >
                                         <div>
                                             <label>RESTAURANT</label>
-                                            <h3 className='place'><Link to={restoURL}>{p.name}</Link></h3>
+                                            <h3 className='place'><Link to={restoURL} className='linkk'>{p.name}</Link></h3>
                                             <p></p>
                                             <p></p>
                                             <label>ADDRESS</label>
@@ -96,7 +96,7 @@ const Mapp = () => {
                                             <p></p>
                                             <label>CUSTOMER REVIEWS</label>
                                             <p></p>
-                                            <l><Link to={url}>Post A Review for {p.name}?</Link></l>
+                                            <l><Link to={url} className='linkk'>Post A Review for {p.name}?</Link></l>
                                             <p></p>
                                             {review.map((r)=>
                                                 <div className='reviews' style={{paddingLeft: '10px', textAlign: 'center'}}>

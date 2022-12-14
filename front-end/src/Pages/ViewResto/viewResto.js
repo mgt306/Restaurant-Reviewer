@@ -7,7 +7,7 @@ import "./ViewResto.css";
 const ViewResto = () => {
     
     let restaurantId = useParams();
-    let idd = "/pins/"+restaurantId.RestaurantId;
+    const idd = "/api/pins/"+restaurantId.RestaurantId;
     
     const [pin, setPin] = useState([]);
     useEffect(() => {
@@ -47,7 +47,7 @@ const ViewResto = () => {
                     )}
                     <label className='restaurantlabels'>RESTAURANT IMAGE</label>
                     <p></p>
-                    <img className='restaurantImage' src={pin.images} ></img>
+                    <img className='restaurantImage' src={pin.images} alt="restoImage" ></img>
                 </card>
             )}
         </div>

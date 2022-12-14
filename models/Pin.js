@@ -5,44 +5,44 @@ const ReviewsSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: false,
+      required: true,
       min: 1,
       max: 60,
     },
     ambianceRating: {
       type: Number,
-      required: false,
+      required: true,
       min: 0,
       max: 5,
     },
     foodRating: {
       type: Number,
-      required: false,
+      required: true,
       min: 0,
       max: 5,
     },
     serviceRating: {
       type: Number,
-      required: false,
+      required: true,
       min: 0,
       max: 5,
     },
     priceRating: {
       type: Number,
-      required: false,
+      required: true,
       min: 0,
       max: 5,
     },
     overallRating: {
       type: Number,
-      required: false,
+      required: true,
       min: 0,
       max: 5,
     },
     postedBy:{
       username: {
         type: String,
-        required: false,
+        required: true,
       }
     }
   },

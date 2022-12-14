@@ -8,7 +8,7 @@ const GenericReview = props => {
     
     let RestaurantId = useParams();
     
-    let idd = "/pins/"+RestaurantId.RestaurantId;
+    let idd = "/api/pins/"+RestaurantId.RestaurantId;
 
     const [review, setReview] = useState({
         title: "",
@@ -21,6 +21,18 @@ const GenericReview = props => {
             username: "",
         }
     });
+    const [pin, setPin] = useState([]);
+    useEffect(() => {
+        const getPin = async () => {
+          try {
+            const restaurant = await axios.get(String(idd));
+            setPin(restaurant.data);
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        getPin();
+    }, []);
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -42,6 +54,7 @@ const GenericReview = props => {
         } catch (error) {
             console.log(error.response);
         }
+        window.open("/");
     };
 
     return (
@@ -50,7 +63,9 @@ const GenericReview = props => {
                 <div className="bruh">
                     <div className="card">
                         <div className="card-header">
-                            <h3>Review</h3>
+                            {pin.length !== 0 &&(
+                                <h3>Review for {pin.name}</h3>
+                            )}
                         </div>
                         <div className="card-body">
                             <form onSubmit={handleSubmit}>

@@ -13,17 +13,17 @@ const AboutUs=()=>{
           
           <div className='gallery-about'>
             <h1 className='h1-about text-center'>About Us!</h1>
-          <a><img src={Ahn} />
+          <a><img src={Ahn} alt="anh"/>
             <p></p>
             <h3 className='text-center'>Anh Tran</h3>
             <desc className='text-center'>Hello! I'm currently a 4th year CS Student @ NYU. I use he/him/his pronouns. I love photography and boxing!</desc>
           </a>
-          <a><img src={Derek} />
+          <a><img src={Derek} alt="Derek" />
             <p></p>
             <h3 className='text-center'>Derek Han</h3>
             <desc className='text-center'>Hi all! I'm currently a 4th year CS Student @ NYU. I use he/him/his pronouns. I am avid about motorcycles, mechanical keyboards, and music.</desc>
           </a>
-          <a><img src={Michael} />
+          <a><img src={Michael} alt="Michael"/>
             <p></p>
             <h3 className='text-center'>Michael Thuo</h3>
             <desc className='text-center'>Hey! I'm currently a 4th year CS Student @ NYU. I use he/him/his pronouns. I enjoy cooking and taking long walks around the city.</desc>

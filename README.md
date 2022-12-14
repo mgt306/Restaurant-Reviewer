@@ -1,7 +1,7 @@
 ## Description of Restaurant Reviewer
 
 # Product Vision
-For students, and adults alike, Restaurant Reivewer emulates a platform such as Yelp, but allows users to rate more aspects of a restaurant. Some of these are staff, ambiance, and service. 
+ For students, and adults alike, Restaurant Reivewer allows users to rate more aspects of a restaurant. Some of these are staff, ambiance, and service. 
 
 
 
@@ -19,16 +19,9 @@ Restaurant Reviewer was created as a student project in a class named "Remote De
 
 ## How to build and test the project
 
-1. Clone the repository
-2. Change directories to the front-end, and run "npm install"
-   (If there is an error with "ERR_OSSL_EVP_UNSUPPORTED", run "export NODE_OPTIONS=--openssl-legacy-provider"
-3. In a separate terminal, run "npm install" in the parent folder
-4. Run "npm start" within both windows
-5. Our webpage should automatically load - if not - navigate to http://localhost:3000
+Open the front end, and use npm install if necessary to download all dependencies. Then run npm start. 
 
 ## Additional info and documents
-
-Application Page: https://restaurant-reviewers.herokuapp.com
 
 Confluence Wiki: https://ttyd-recipe-book.atlassian.net/wiki/spaces/restaurantreviewer/pages/9207809/User+Guide
 
