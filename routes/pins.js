@@ -12,12 +12,32 @@ router.post("/", async (req, res) => {
   }
 });
 
+// add reviews to a restaurant
+router.put("/:id", async(req, res, next) => {
+  try{
+    await Pin.findByIdAndUpdate({_id: req.params.id}, {$addToSet: req.body});
+    const updatePin = await Pin.findOne({_id: req.params.id});
+    res.status(200).json(updatePin);
+  } catch (err){
+    res.status(500).json(err);
+  }
+});
+
 // fetching all pins
 router.get("/", async (req, res) => {
   try {
     const pins = await Pin.find();
     res.status(200).json(pins);
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/:id", async (req, res)=>{
+  try{
+    const singlePin = await Pin.findOne({_id: req.params.id});
+    res.status(200).json(singlePin);
+  }catch (err) {
     res.status(500).json(err);
   }
 });

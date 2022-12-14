@@ -1,5 +1,54 @@
 const mongoose = require("mongoose");
 
+// review
+const ReviewsSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: false,
+      min: 1,
+      max: 60,
+    },
+    ambianceRating: {
+      type: Number,
+      required: false,
+      min: 0,
+      max: 5,
+    },
+    foodRating: {
+      type: Number,
+      required: false,
+      min: 0,
+      max: 5,
+    },
+    serviceRating: {
+      type: Number,
+      required: false,
+      min: 0,
+      max: 5,
+    },
+    priceRating: {
+      type: Number,
+      required: false,
+      min: 0,
+      max: 5,
+    },
+    overallRating: {
+      type: Number,
+      required: false,
+      min: 0,
+      max: 5,
+    },
+    postedBy:{
+      username: {
+        type: String,
+        required: false,
+      }
+    }
+  },
+  { timestamps: true }
+);
+// pins or restaurants
 const PinSchema = new mongoose.Schema(
     {
       name: {
@@ -20,12 +69,41 @@ const PinSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
-      location_string: {
+      phone: {
         type: String,
-        required: true,
+        required: false,
       },
+      website:{
+        type: String,
+        required: false,
+      },
+      cuisine: [
+        {
+        type: String,
+        required: false,
+      }
+      ],
+      booking: {
+        provider: {
+          type: String,
+          required: false,
+        },
+        url: {
+          type: String,
+          required: false,
+        }
+      },
+      images: {
+        type: String,
+        required: false,
+      },
+      reviews: [
+      {
+        type: ReviewsSchema,
+        required: false,
+      },
+      ]
     },
-    { timestamps: true }
   );
   
   module.exports = mongoose.model("Pin", PinSchema);

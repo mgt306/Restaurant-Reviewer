@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl';
 import axios from "axios";
 import StarIcon from '@mui/icons-material/Star';
-
+import { format } from "timeago.js";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Link, Navigate } from 'react-router-dom';
 require('dotenv').config()
@@ -33,10 +33,10 @@ const Mapp = () => {
     useEffect(() => {
         const getPins = async () => {
           try {
-            const restaurants = await axios.get("/api/pins");
+            const restaurants = await axios.get("/pins");
             setPins(restaurants.data);
           } catch (err) {
-            console.log(err.response.data);
+            console.log(err);
           }
         };
         getPins();
@@ -110,7 +110,7 @@ const Mapp = () => {
                                                         <p>Price Rating: {Array(r.priceRating).fill(<StarIcon/>)} {Array(5-r.priceRating).fill(<StarBorderIcon/>)}</p>
                                                     </div>
                                                 </card>
-                                                <i><b>Posted by user "{r.postedBy.username}" {r.createdAt} </b></i>
+                                                <i><b>Posted by user "{r.postedBy.username}" {format(r.createdAt)} </b></i>
                                                 <p></p>
                                                 <p></p>
                                                 </div>
