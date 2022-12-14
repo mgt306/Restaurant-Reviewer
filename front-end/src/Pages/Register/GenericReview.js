@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./GenericReview.css";
 import { useState, useEffect } from "react";
 import { React } from "react";
@@ -6,6 +6,7 @@ import axios from "axios";
 
 const GenericReview = props => {
     
+    const navigate = useNavigate();
     let RestaurantId = useParams();
     
     let idd = "/pins/"+RestaurantId.RestaurantId;
@@ -54,7 +55,8 @@ const GenericReview = props => {
         } catch (error) {
             console.log(error.response.data);
         }
-        window.open("/");
+        navigate('/');
+        alert("Success! You have submitted a review");
     };
 
     return (

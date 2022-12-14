@@ -7,7 +7,7 @@ import { format } from "timeago.js";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Link, Navigate } from 'react-router-dom';
 require('dotenv').config()
-console.log(process.env)
+//console.log(process.env)
 //believe dotenv gets used at build time and not runtime, so app has to be build first? 
 
 const Mapp = () => {
@@ -83,6 +83,7 @@ const Mapp = () => {
                                         closeOnClick={false}
                                         onClose={() => {setCurrentPlaceId(null); setReview(null); setURL(null); setRestoURL(null);}}
                                         offset='25'
+                                        anchor="top"
                                         captureScroll={true}
                                     >
                                         <div>
