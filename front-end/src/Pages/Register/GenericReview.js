@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./GenericReview.css";
 import { useState, useEffect } from "react";
 import { React } from "react";
