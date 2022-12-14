@@ -21,7 +21,7 @@ Restaurant Reviewer was created as a student project in a class named "Remote De
 
 1. Clone the repository
 2. Change directories to the front-end, and run "npm install"
-   (If there is an error with "ERR_OSSL_EVP_UNSUPPORTED", run export "NODE_OPTIONS=--openssl-legacy-provider"
+   (If there is an error with "ERR_OSSL_EVP_UNSUPPORTED", run "export NODE_OPTIONS=--openssl-legacy-provider"
 3. In a separate terminal, run "npm install" in the parent folder
 4. Run "npm start" within both windows
 5. Our webpage should automatically load - if not - navigate to http://localhost:3000
