@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ViewResto.css";
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const ViewResto = () => {
     
@@ -15,12 +17,15 @@ const ViewResto = () => {
           try {
             const restaurant = await axios.get(String(idd));
             setPin(restaurant.data);
+            setReviews(restaurant.data.reviews);
           } catch (err) {
             console.log(err);
           }
         };
         getPin();
     }, []);
+
+    const [reviews, setReviews] = useState([]);
 
     return (  
         <div className='restoo'>
@@ -35,21 +40,37 @@ const ViewResto = () => {
                     <p></p>
                     {pin.booking.length !== 0 &&(
                         <>
-                        <a className='restaurantinfo' href={pin.booking.url}>{pin.booking.provider}</a>
+                        <a className='restaurantlinks' href={pin.booking.url}>{pin.booking.provider}</a>
                         <p></p>
                         </>
                     )} 
                     {pin.website.length !== 0 && (
                         <>
-                        <a className='restaurantinfo' href={pin.website}>Website</a>
+                        <a className='restaurantlinks' href={pin.website}>Website</a>
                         <p></p>
                         </>
                     )}
                     <label className='restaurantlabels'>RESTAURANT IMAGE</label>
                     <p></p>
                     <img className='restaurantImage' src={pin.images} alt="restoImage" ></img>
+                    <p></p>
+                    <label className='restaurantlabels'>RESTAURANT REVIEWS</label>
+                    <p></p>
+                    <div className='reviewsss'>
+                    {reviews.map((r) =>
+                        <div className='singularReview'>
+                            <h5 className='reviewTitle'>"{r.title}"</h5>
+                                <p className='rating'>Ambiance Rating: <a className='filledStar'>{Array(r.ambianceRating).fill(<StarIcon/>)}</a>{Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
+                                <p className='rating'>Food Rating: <a className='filledStar'>{Array(r.foodRating).fill(<StarIcon/>)}</a>{Array(5-r.foodRating).fill(<StarBorderIcon/>)}</p>
+                                <p className='rating'>Service Rating: <a className='filledStar'>{Array(r.serviceRating).fill(<StarIcon/>)}</a>{Array(5-r.serviceRating).fill(<StarBorderIcon/>)}</p>
+                                <p className='rating'>Price Rating: <a className='filledStar'>{Array(r.priceRating).fill(<StarIcon/>)}</a>{Array(5-r.priceRating).fill(<StarBorderIcon/>)}</p>
+                            <label className='reviewlabels'>Review by <label className='userrr'>"{r.postedBy.username}"</label></label>
+                        </div>
+                    )}
+                    </div>
                 </card>
             )}
+            
         </div>
     );
 }

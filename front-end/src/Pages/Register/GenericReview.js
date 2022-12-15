@@ -3,6 +3,8 @@ import "./GenericReview.css";
 import { useState, useEffect } from "react";
 import { React } from "react";
 import axios from "axios";
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const GenericReview = props => {
     const navigate = useNavigate();
@@ -55,7 +57,8 @@ const GenericReview = props => {
             console.log(error.response);
         }
         alert("Success! You have added a review");
-        navigate("/");
+        let restaurantProf = "/viewResto/"+RestaurantId.RestaurantId;
+        navigate(String(restaurantProf));
     };
 
     return (
@@ -96,19 +99,23 @@ const GenericReview = props => {
                                     <label className='headings' htmlFor="ambianceRating">Ambiance Rating</label>
                                     <div className="ratings">
                                         <input
-                                            type="Number"
+                                            type="number"
+                                            min={0}
+                                            max={5}
                                             className="form-control"
                                             id="ambianceRating"
                                             placeholder="Enter ambiance rating"
                                             value={review.ambianceRating}
                                             onChange={e => setReview({ ...review, ambianceRating: e.target.value })}
-                                        />                                        
+                                        />
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label className='headings' htmlFor="foodRating">Food Rating</label>
                                     <input
-                                        type="Number"
+                                        type="number"
+                                        min={0}
+                                        max={5}
                                         className="form-control"
                                         id="foodRating"
                                         placeholder="Enter food rating"
@@ -119,7 +126,9 @@ const GenericReview = props => {
                                 <div className="form-group">
                                     <label className='headings' htmlFor="serviceRating">Service Rating</label>
                                     <input
-                                        type="Number"
+                                        type="number"
+                                        min={0}
+                                        max={5}
                                         className="form-control"
                                         id="serviceRating"
                                         placeholder="Enter service rating"
@@ -130,7 +139,9 @@ const GenericReview = props => {
                                 <div className="form-group">
                                     <label className='headings' htmlFor="priceRating">Price Rating</label>
                                     <input
-                                        type="Number"
+                                        type="number"
+                                        min={0}
+                                        max={5}
                                         className="form-control"
                                         id="priceRating"
                                         placeholder="Enter price rating"
@@ -141,7 +152,9 @@ const GenericReview = props => {
                                 <div className="form-group">
                                     <label className='headings' htmlFor="overallRating">Overall Rating</label>
                                     <input
-                                        type="Number"
+                                        type="number"
+                                        min={0}
+                                        max={5}
                                         className="form-control"
                                         id="overallRating"
                                         placeholder="Enter overall rating"
