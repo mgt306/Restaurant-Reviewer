@@ -8,12 +8,11 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Link} from 'react-router-dom';
 import "./NewMap.css";
 
-
 require('dotenv').config()
 console.log(process.env)
 //believe dotenv gets used at build time and not runtime, so app has to be build first? 
 
-const Mapp = () => {
+const AddMapp = () => {
     const mapRef = useRef();
     const [viewport, setViewport] = useState([]);
     const [userLoc, setUserLoc] = useState([]);
@@ -107,7 +106,7 @@ const Mapp = () => {
                                             <p></p>
                                             <label>CUSTOMER REVIEWS</label>
                                             <p></p>
-                                            <l className='place'><Link to={url} className='linkk'>Post A Review for {p.name}?</Link></l>
+                                            <l><Link to={url} className='linkk'>Post A Review for {p.name}?</Link></l>
                                             <p></p>
                                             {review.map((r)=>
                                                 <div className='reviews' style={{paddingLeft: '10px', textAlign: 'center'}}>
@@ -153,4 +152,4 @@ const Mapp = () => {
     );
 }
  
-export default Mapp;
+export default AddMapp;

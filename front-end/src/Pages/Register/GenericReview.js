@@ -3,6 +3,8 @@ import "./GenericReview.css";
 import { useState, useEffect } from "react";
 import { React } from "react";
 import axios from "axios";
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
@@ -61,7 +63,7 @@ const GenericReview = props => {
         let restaurantProf = "/viewResto/"+RestaurantId.RestaurantId;
         navigate(String(restaurantProf));
     };
-
+    console.log(review.ambianceRating);
     return (
         <div className="container">
             <div className="row">
@@ -75,7 +77,7 @@ const GenericReview = props => {
                         <div className="card-body">
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                    <label className='headings' htmlFor="title">Title</label>
+                                    <label className='headings' htmlFor="title">Title</label>                                    
                                     <input
                                         type="text"
                                         className="form-control"

@@ -1,9 +1,9 @@
 import React from 'react';
-import NewMap from '../../components/NewMap';
+import AddMapp from '../../components/AddMap';
 
 const Explore = () => {
     return (  
-       <NewMap />
+       <AddMapp />
     );
 }
 

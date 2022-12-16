@@ -95,8 +95,11 @@
   }
   .linkk{
     color:#a3e7f5;
+    text-align: center;
   }
   .linkk:hover{
     color:#6dd2e6;
   }
-
+l.place{
+  text-align: center;
+}
