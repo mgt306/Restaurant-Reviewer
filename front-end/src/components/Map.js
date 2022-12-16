@@ -59,8 +59,12 @@ const Mapp = () => {
         setViewport({ latitude: lat, longitude: long, zoom: 15, pitch: 45 });
         mapRef.current.flyTo({center: [long, lat], duration: 2000});
     });
-
     
+    const handleClose = useCallback(() => {
+
+        mapRef.current.flyTo({center: [userLoc.longitude, userLoc.latitude], zoom: 15, pitch: 45, duration: 2000});
+    });
+   
 
     return (  
         <div>
@@ -90,7 +94,7 @@ const Mapp = () => {
                                         closeButton={true}
                                         closeOnClick={false}
                                         closeOnMove={false}
-                                        onClose={() => {setCurrentPlaceId(null); setReview(null); setURL(null); setRestoURL(null);}}
+                                        onClose={() => {setCurrentPlaceId(null); setReview(null); setURL(null); setRestoURL(null); handleClose();}}
                                         captureScroll={true}
                                         //anchor="top-right"
                                     >
@@ -139,6 +143,7 @@ const Mapp = () => {
                             longitude={userLoc.longitude}
                             latitude={userLoc.latitude}
                             color="#fff"
+                            onClick={()=>handleClose()}
                         />
                         <NavigationControl
                             position='top-right' />
