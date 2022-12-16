@@ -5,7 +5,7 @@ import axios from "axios";
 import StarIcon from '@mui/icons-material/Star';
 import { format } from "timeago.js";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 require('dotenv').config()
@@ -14,7 +14,7 @@ console.log(process.env)
 
 const Mapp = () => {
     const mapRef = useRef();
-
+    const navigate = useNavigate();
     const [viewport, setViewport] = useState([]);
     const [userLoc, setUserLoc] = useState([]);
     useEffect(() =>{
@@ -59,12 +59,10 @@ const Mapp = () => {
         setViewport({ latitude: lat, longitude: long, zoom: 15, pitch: 45 });
         mapRef.current.flyTo({center: [long, lat], duration: 2000});
     });
-    
-    const handleClose = useCallback(() => {
 
-        mapRef.current.flyTo({center: [userLoc.longitude, userLoc.latitude], zoom: 15, pitch: 45, duration: 2000});
+    const handleClose = useCallback( async () => {
+        await mapRef.current.flyTo({center: [userLoc.longitude, userLoc.latitude], zoom: 15, pitch: 45, duration: 2000});
     });
-   
 
     return (  
         <div>
