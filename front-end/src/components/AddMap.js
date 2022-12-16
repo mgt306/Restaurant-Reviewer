@@ -104,7 +104,7 @@ const AddMapp = () => {
         try {
             const resp = await axios.post("/api/pins", newRestaurant);
             console.log(resp.data);
-            alert("Success! You have added" + addResto.name);
+            alert("Success! You have added " + addResto.name);
         } catch (error) {
             console.log(error.response);
             alert(error);
