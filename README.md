@@ -1,6 +1,6 @@
-## Description of Restaurant Reviewer
+# Description of Restaurant Reviewer
 
-# Product Vision
+## Product Vision
  For students, and adults alike, Restaurant Reivewer allows users to rate more aspects of a restaurant. Some of these are staff, ambiance, and service. 
 
 
