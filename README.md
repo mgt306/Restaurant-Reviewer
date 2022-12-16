@@ -29,4 +29,8 @@ Deployed Website: https://restaurant-reviewers.herokuapp.com/
 
 ## Cool Features You Should Check Out
 
-1) Mapbox flyto animations allows users to enjoy a smoother experience
+1) Mapbox flyto animations using React hooks and callback functions, allows users to enjoy a smoother experience when using our home page map. In the home page map, users will start their viewport at their live requested location, marked by the white marker. In the New York area, user's can explore our pre-determined set of restaurants marked by the teal colored markers. When clicked on, restaurant information will be shown in a popup attached to it's marker and a flyto transition will smoothly take the user's viewport to the restaurant marker on the map. When the popup is closed, the viewport will smoothly transition back to users location. 
+
+2) 
+
+3) 
