@@ -8,6 +8,7 @@ import '../../Styles/AboutUs.css';
 
 const AboutUs=()=>{
     return(
+      <div>
       <div className='row'>
         <div className='col'>
           
@@ -31,12 +32,16 @@ const AboutUs=()=>{
           </div>
         </div>
         <div className='col'>
-          <div className='aboutProj'>
-            <h1 className='h1-about'>About the Project!</h1>
-            <p className='p2-about'>This project was created for the final project of the CS Level Elective course "Remote Development" at NYU's College of Arts and Sciences. 
+          
+        </div>
+      </div>
+      <div className='row'>
+        <div className='aboutProj'>
+            <h1 className='h1-about text-center'>About the Project!</h1>
+            <p className='p2-about text-center'>This project was created for the final project of the CS Level Elective course "Remote Development" at NYU's College of Arts and Sciences. 
              The project was created by a team of 3 students: Anh Tran, Derek Han, and Michael Thuo. The project was created using React, Express, Node.js, and MongoDB, and deployed on Heroku.</p>
           </div>
-        </div>
+      </div>
       </div>
     )
 };
