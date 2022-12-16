@@ -5,6 +5,7 @@ import axios from "axios";
 import "./ViewResto.css";
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { format } from "timeago.js";
 
 const ViewResto = () => {
     
@@ -64,7 +65,7 @@ const ViewResto = () => {
                                 <p className='rating'>Food Rating: <a className='filledStar'>{Array(r.foodRating).fill(<StarIcon/>)}</a>{Array(5-r.foodRating).fill(<StarBorderIcon/>)}</p>
                                 <p className='rating'>Service Rating: <a className='filledStar'>{Array(r.serviceRating).fill(<StarIcon/>)}</a>{Array(5-r.serviceRating).fill(<StarBorderIcon/>)}</p>
                                 <p className='rating'>Price Rating: <a className='filledStar'>{Array(r.priceRating).fill(<StarIcon/>)}</a>{Array(5-r.priceRating).fill(<StarBorderIcon/>)}</p>
-                            <label className='reviewlabels'>Review by <label className='userrr'>"{r.postedBy.username}"</label></label>
+                            <label className='reviewlabels'>Review by<label className='userrr'>"{r.postedBy.username}"</label><label className='timeAgoo'>{format(r.createdAt)}</label></label>
                         </div>
                     )}
                     </div>

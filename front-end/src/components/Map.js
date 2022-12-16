@@ -1,16 +1,20 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl';
 import axios from "axios";
 import StarIcon from '@mui/icons-material/Star';
 import { format } from "timeago.js";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Link } from 'react-router-dom';
+
+
 require('dotenv').config()
 console.log(process.env)
 //believe dotenv gets used at build time and not runtime, so app has to be build first? 
 
 const Mapp = () => {
+    const mapRef = useRef();
+
     const [viewport, setViewport] = useState([]);
     const [userLoc, setUserLoc] = useState([]);
     useEffect(() =>{
@@ -21,11 +25,11 @@ const Mapp = () => {
                 longitude: pos.coords.longitude,
                 zoom: 15,
                 pitch: 45,
-            });
+            })
             setUserLoc({
                 latitude: pos.coords.latitude,
                 longitude: pos.coords.longitude,
-            })
+            })            
         });
     }, []);
 
@@ -46,25 +50,29 @@ const Mapp = () => {
     const [url, setURL] = useState([]);
     const [review, setReview] = useState([]);
     const [currentPlaceId, setCurrentPlaceId] = useState([]);
-    const handleMarkerClick = (id, lat, long, reviews) => {
-        setCurrentPlaceId(id);
+    const handleMarkerClick = useCallback((id, lat, long, reviews) => {
+        setCurrentPlaceId(String(id));
         setReview(reviews);
-        setURL("/review/"+id);
-        setRestoURL("/viewResto/"+id);
-        setViewport({ ...viewport, latitude: lat, longitude: long, zoom: 15, pitch: 45 });
-    };
+        setURL("/review/"+String(id));
+        console.log(url);
+        setRestoURL("/viewResto/"+String(id));
+        setViewport({ latitude: lat, longitude: long, zoom: 15, pitch: 45 });
+        mapRef.current.flyTo({center: [long, lat], duration: 2000});
+    });
 
+    
 
     return (  
         <div>
             {userLoc.latitude && userLoc.longitude &&(
-                <div>
+                <div style={{position: 'fixed', width: "100%", height: "100%"}}>
                     <ReactMapGL className="Original"
+                        ref={mapRef}
                         mapboxAccessToken = {"pk.eyJ1IjoiYW5odHJyIiwiYSI6ImNsOW9kbGtwazBnbTAzd281YXJ3ejhjcmsifQ.Et0LpdRG7mN6MB58p_52qQ"}
                         initialViewState={viewport}
-                        style={{position: 'fixed', width: "100%", height: "100%"}}
                         mapStyle="mapbox://styles/anhtrr/cl9odtk6b001v15s1cq54igry"
                         onRender={(event) => event.target.resize(viewport)} 
+                        keyboard={true}
                     >
                         {pins.map((p)=>
                             <>
@@ -81,9 +89,10 @@ const Mapp = () => {
                                         longitude={p.longitude}
                                         closeButton={true}
                                         closeOnClick={false}
+                                        closeOnMove={false}
                                         onClose={() => {setCurrentPlaceId(null); setReview(null); setURL(null); setRestoURL(null);}}
-                                        offset='25'
                                         captureScroll={true}
+                                        //anchor="top-right"
                                     >
                                         <div>
                                             <label>RESTAURANT</label>

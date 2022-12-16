@@ -55,6 +55,7 @@ const GenericReview = props => {
             console.log(resp.data);
         } catch (error) {
             console.log(error.response);
+            alert(error);
         }
         alert("Success! You have added a review");
         let restaurantProf = "/viewResto/"+RestaurantId.RestaurantId;
