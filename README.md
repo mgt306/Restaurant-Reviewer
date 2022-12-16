@@ -25,3 +25,8 @@ Open the front end, and use npm install if necessary to download all dependencie
 
 Confluence Wiki: https://ttyd-recipe-book.atlassian.net/wiki/spaces/restaurantreviewer/pages/9207809/User+Guide
 
+Deployed Website: https://restaurant-reviewers.herokuapp.com/
+
+## Cool Features You Should Check Out
+
+1) Mapbox flyto animations allows users to enjoy a smoother experience
