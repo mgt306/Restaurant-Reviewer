@@ -70,8 +70,11 @@
     color: rgb(169, 202, 200);
     font-style:oblique;
   }
-  .mapboxgl-popup-close-Button{
-    color:#a3e7f5;
+  .mapboxgl-popup-close-button{
+    color: rgb(80, 142, 139);
+    font-size: 1cm;
+    font-weight: 900;
+    padding-right: 10px;
   }
   ::-webkit-scrollbar {
       width: 12px;
@@ -102,4 +105,44 @@
   }
 l.place{
   text-align: center;
+}
+.headingss{
+  font-weight: bolder;
+  font-style: italic;
+  padding-left: 10px;
+  color: rgb(80, 142, 139);
+  padding-top: 20px;
+}
+.headingsss{
+  font-weight: bolder;
+  font-style: italic;
+  padding-left: 10px;
+  color: rgb(80, 142, 139);
+}
+button{
+  position:relative;
+  font-weight: 900;
+  font-style: italic;
+  margin-top: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+button:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn-primary{
+  background-color: #a3e7f5;
+  border: 5px solid #1e1e1e;
+  color: #1e1e1e;
+  height: 100px;
+  width: 300px;
+}
+.btn-primary:hover{
+  background-color: #1e1e1e;
+  border: 5px solid #a3e7f5;
+  color: #a3e7f5;
+}
+.buttons{
+  padding-top: 80vh;
+  font-weight: 900;
+  padding-left: 50px;
 }

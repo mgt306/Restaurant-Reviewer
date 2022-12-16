@@ -1,6 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useState, useCallback, useRef } from 'react';
-import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl';
+import ReactMapGL, { Marker, NavigationControl, Popup, GeolocateControl} from 'react-map-gl';
 import axios from "axios";
 import StarIcon from '@mui/icons-material/Star';
 import { format } from "timeago.js";
@@ -92,7 +92,7 @@ const Mapp = () => {
                                         closeButton={true}
                                         closeOnClick={false}
                                         closeOnMove={false}
-                                        onClose={() => {setCurrentPlaceId(null); setReview(null); setURL(null); setRestoURL(null); handleClose();}}
+                                        onClose={() => {setCurrentPlaceId(null); setReview(null); setURL(null); setRestoURL(null);}}
                                         captureScroll={true}
                                         //anchor="top-right"
                                     >
@@ -144,8 +144,13 @@ const Mapp = () => {
                             onClick={()=>handleClose()}
                         />
                         <NavigationControl
-                            position='top-right' />
-                        
+                            position='top-right' 
+                            
+                        >
+                        </NavigationControl>
+                        <GeolocateControl
+                            position='top-right'
+                        />         
                     </ReactMapGL>
                 </div>
             )}

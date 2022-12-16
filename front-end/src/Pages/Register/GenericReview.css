@@ -1,12 +1,9 @@
-.container{
-    align-items: center;
-}
 .card{
     min-width: 50vw;
     max-width: 90vw;
     background-color: #b3c2c2;
     margin-top: 10vh;
-    border: 5px solid #a3e7f5;;
+    border: 5px solid #a3e7f5;
 }
 .headings{
     color:black;

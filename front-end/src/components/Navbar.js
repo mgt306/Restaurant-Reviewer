@@ -78,7 +78,7 @@ const Navbar = () => {
                         <NavLink className='nav-link' to="/explore">
                         <i 
                             className="fas fa-utensils">
-                        </i>Explore
+                        </i>Explore and Add Restaurants
                         </NavLink>
                     </li>
                     
