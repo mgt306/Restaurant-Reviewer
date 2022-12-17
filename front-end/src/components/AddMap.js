@@ -173,7 +173,7 @@ const AddMapp = () => {
                                                 <card>
                                                     <l>"{r.title}"</l>
                                                     <div className='stars'>
-                                                        <p className='ratingg'>Overall Rating: <a className='filledStar'>{Array(r.overallRating).fill(<StarIcon/>)}</a> {Array(5-r.overallRating).fill(<StarBorderIcon/>)}</p>
+                                                        <p className='overallratingg'>Overall Rating: <a className='filledStar'>{Array(r.overallRating).fill(<StarIcon/>)}</a> {Array(5-r.overallRating).fill(<StarBorderIcon/>)}</p>
                                                         <p className='ratingg'>Ambiance Rating: <a className='filledStar'>{Array(r.ambianceRating).fill(<StarIcon/>)}</a> {Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
                                                         <p className='ratingg'>Food Rating: <a className='filledStar'>{Array(r.foodRating).fill(<StarIcon/>)}</a> {Array(5-r.foodRating).fill(<StarBorderIcon/>)}</p>
                                                         <p className='ratingg'>Service Rating: <a className='filledStar'>{Array(r.serviceRating).fill(<StarIcon/>)}</a> {Array(5-r.serviceRating).fill(<StarBorderIcon/>)}</p>

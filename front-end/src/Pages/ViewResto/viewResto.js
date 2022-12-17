@@ -91,6 +91,7 @@ const ViewResto = () => {
                         {reviews.map((r) =>
                         <div className='singularReview'>
                             <h5 className='reviewTitle'>"{r.title}"</h5>
+                                <p className='ovrRating'>Overall Rating: <a className='filledStar'>{Array(r.overallRating).fill(<StarIcon/>)}</a>{Array(5-r.overallRating).fill(<StarBorderIcon/>)}</p>
                                 <p className='rating'>Ambiance Rating: <a className='filledStar'>{Array(r.ambianceRating).fill(<StarIcon/>)}</a>{Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
                                 <p className='rating'>Food Rating: <a className='filledStar'>{Array(r.foodRating).fill(<StarIcon/>)}</a>{Array(5-r.foodRating).fill(<StarBorderIcon/>)}</p>
                                 <p className='rating'>Service Rating: <a className='filledStar'>{Array(r.serviceRating).fill(<StarIcon/>)}</a>{Array(5-r.serviceRating).fill(<StarBorderIcon/>)}</p>

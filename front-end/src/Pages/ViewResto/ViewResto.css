@@ -86,3 +86,9 @@ label.timeAgoo{
     color: #a3e7f5;
     padding: 20px;
 }
+p.ovrRating{
+    text-align: left;
+    padding-left: 21px;
+    color:#a3e7f5;
+    font-style:oblique;
+}
