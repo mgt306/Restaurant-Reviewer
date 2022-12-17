@@ -2,7 +2,7 @@
     padding-top: 40px;
 }
 label.reviewlabels{
-    padding-left: 40px;
+
     color: #9aadb0;  
 }
 .restaurantinfo{
@@ -21,8 +21,7 @@ label.reviewlabels{
 .reviewTitle{
     color: #a3e7f5;
     text-align: left;
-    padding-left: 30px;
-    padding-top: 25px;
+    padding-left: 10px;
 }
 .restaurantImage{
     width: 5cm;
@@ -36,23 +35,32 @@ label.reviewlabels{
 }
 .reviewsss{
     overflow: auto;
-    min-height: 310px;
-    max-height: 310px;
+    min-height: 305px;
+    max-height: 305px;
     max-width: 80vw;
     border-radius: 30px;
     border: 5px solid #a3e7f5;
 }
+.noReviewss{
+    overflow: auto;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    border: 5px solid #a3e7f5;
+    align-items: left;
+    text-align: left;
+}
 p.rating{
     text-align: left;
-    padding-left: 40px;
+    padding-left: 21px;
     color:#9aadb0;
 }
 div.singularReview{
     display: inline-block;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 100px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 label.userrr{
     color:#a3e7f5;
@@ -67,5 +75,14 @@ label.timeAgoo{
     color:#9aadb0;
 }
 .placeeee{
-    padding-left: 30vw;
+    font-weight: bolder;
+    font-style: italic;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: rgb(80, 142, 139);
+}
+.srry{
+    text-align: left;
+    color: #a3e7f5;
+    padding: 20px;
 }

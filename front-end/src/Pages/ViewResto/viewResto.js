@@ -59,8 +59,11 @@ const ViewResto = () => {
                     <p></p>
                     <label className='restaurantlabels'>RESTAURANT REVIEWS</label>
                     <p></p>
+                    {reviews.length !== 0 &&(
+                    <>
                     <div className='reviewsss'>
-                    {reviews.map((r) =>
+                        <>
+                        {reviews.map((r) =>
                         <div className='singularReview'>
                             <h5 className='reviewTitle'>"{r.title}"</h5>
                                 <p className='rating'>Ambiance Rating: <a className='filledStar'>{Array(r.ambianceRating).fill(<StarIcon/>)}</a>{Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
@@ -69,9 +72,23 @@ const ViewResto = () => {
                                 <p className='rating'>Price Rating: <a className='filledStar'>{Array(r.priceRating).fill(<StarIcon/>)}</a>{Array(5-r.priceRating).fill(<StarBorderIcon/>)}</p>
                             <label className='reviewlabels'>Review by<label className='userrr'>"{r.postedBy.username}"</label><label className='timeAgoo'>{format(r.createdAt)}</label></label>
                         </div>
-                    )}
+                        )}
+                        </>
                     </div>
+                    <p></p>
                     <l className='placeeee'><Link to={urlll} className='linkk'>Post A Review for {pin.name}?</Link></l>
+                    </>
+                    )}
+                    {reviews.length === 0 &&(
+                        <>
+                        <div className='noReviewss'>
+                            <h5 className='srry'>Sorry, there are no reviews for {pin.name} yet!</h5>
+                        </div>
+                        <p></p>
+                        <l className='placeeee'><Link to={urlll} className='linkk'>Post A Review for {pin.name}?</Link></l>
+                        </>
+                    )}
+                    
                 </card>
             )}
             
