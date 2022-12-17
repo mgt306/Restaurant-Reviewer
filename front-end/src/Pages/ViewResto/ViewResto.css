@@ -36,8 +36,8 @@ label.reviewlabels{
 }
 .reviewsss{
     overflow: auto;
-    min-height: 325px;
-    max-height: 325px;
+    min-height: 310px;
+    max-height: 310px;
     max-width: 80vw;
     border-radius: 30px;
     border: 5px solid #a3e7f5;
@@ -51,8 +51,8 @@ div.singularReview{
     display: inline-block;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 label.userrr{
     color:#a3e7f5;
@@ -65,4 +65,7 @@ label.userrr{
 }
 label.timeAgoo{
     color:#9aadb0;
+}
+.placeeee{
+    padding-left: 30vw;
 }

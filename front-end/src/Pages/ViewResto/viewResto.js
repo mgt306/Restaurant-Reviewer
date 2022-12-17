@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ViewResto.css";
@@ -28,9 +28,11 @@ const ViewResto = () => {
 
     const [reviews, setReviews] = useState([]);
 
+    const urlll = "/review/"+restaurantId.RestaurantId;
+
     return (  
         <div className='restoo'>
-            {pin.length !== 0 &&(
+            {pin &&(
                 <card className='restaurantProfile'>
                     <label className='restaurantlabels'>RESTAURANT NAME</label>
                     <h1 className='restaurantinfo'>{pin.name}</h1>
@@ -39,13 +41,13 @@ const ViewResto = () => {
                     <h5 className='restaurantinfo'> Phone: {pin.phone}</h5>
                     <label className='restaurantlabels'>BOOKING INFO</label>
                     <p></p>
-                    {pin.booking.length !== 0 &&(
+                    {pin.booking &&(
                         <>
                         <a className='restaurantlinks' href={pin.booking.url}>{pin.booking.provider}</a>
                         <p></p>
                         </>
                     )} 
-                    {pin.website.length !== 0 && (
+                    {pin.website && (
                         <>
                         <a className='restaurantlinks' href={pin.website}>Website</a>
                         <p></p>
@@ -69,6 +71,7 @@ const ViewResto = () => {
                         </div>
                     )}
                     </div>
+                    <l className='placeeee'><Link to={urlll} className='linkk'>Post A Review for {pin.name}?</Link></l>
                 </card>
             )}
             

@@ -42,12 +42,8 @@
 }
 
 .gallery-about {
-    --s: 15vw; 
-    --g: 10vw;  
-  
     display: grid;
     gap: 1cm;
-    width: calc(3*var(--s) + 2*var(--g)); 
     aspect-ratio: 1;
     grid-template-columns: fit-content(25%);
     padding-left: 50px;
@@ -64,18 +60,10 @@
 .gallery-about img:hover{
   border: 5px solid #fff;
 }
-
-.gallery-about artists{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 2.5vw;
-  font-size:  calc(1em + 0.8vmin); 
-  color: #a3e7f5;
-}
 .g-back{
   background:white;
   background-blend-mode: screen;
 }
-
 .gallery-about desc{
   display: grid;
   color: #a3e7f5;
@@ -83,7 +71,8 @@
 .aboutProj{
   text-orientation: upright;
   grid-template-columns: fit-content(100%);
-  min-width: 1000px;
+  min-width: 70vw;
+  max-width: 80vw;
 }
 ::-webkit-scrollbar {
   width: 12px;
@@ -111,5 +100,4 @@
   grid-template-columns: 30% 70%;	
   padding-left: 10px;
 }
-
 
