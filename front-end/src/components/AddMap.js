@@ -218,7 +218,7 @@ const AddMapp = () => {
                         {addAvail === 1 &&(
                             <button
                                 className="btn btn-primary1"
-                                onClick={() => {setAddAvail(0); setAddResto(null)}}
+                                onClick={() => {setAddAvail(0); setAddResto(null); handleClose()}}
                             >
                                 Disable Add Restaurant Mode                                 
                             </button>
