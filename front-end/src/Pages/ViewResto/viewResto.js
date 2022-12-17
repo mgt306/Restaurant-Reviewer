@@ -38,12 +38,33 @@ const ViewResto = () => {
                     <h1 className='restaurantinfo'>{pin.name}</h1>
                     <label className='restaurantlabels'>RESTAURANT INFO</label>
                     <h5 className='restaurantinfo'> Address: {pin.address}</h5>
-                    <h5 className='restaurantinfo'> Phone: {pin.phone}</h5>
+                    {pin.phone &&(
+                        <h5 className='restaurantinfo'> Phone: {pin.phone}</h5>
+                    )}
                     <label className='restaurantlabels'>BOOKING INFO</label>
                     <p></p>
                     {pin.booking &&(
                         <>
-                        <a className='restaurantlinks' href={pin.booking.url}>{pin.booking.provider}</a>
+                            {pin.booking.provider && pin.booking.url &&(
+                                <>
+                                <a className='restaurantlinks' href={pin.booking.url}>
+                                    {pin.booking.provider}
+                                </a>
+                                </>
+                            )}
+                            {!pin.booking.provider && pin.booking.url && (
+                                <>
+                                <a className='restaurantlinks' href={pin.booking.url}>
+                                    Book here!
+                                </a>
+                                </>
+                            )}
+                            {pin.booking.provider && !pin.booking.url &&(
+                                <>
+                                <h5>Find {pin.name} on {pin.booking.provider}</h5>
+                                </>
+                            )}
+                        
                         <p></p>
                         </>
                     )} 
@@ -53,10 +74,14 @@ const ViewResto = () => {
                         <p></p>
                         </>
                     )}
-                    <label className='restaurantlabels'>RESTAURANT IMAGE</label>
-                    <p></p>
-                    <img className='restaurantImage' src={pin.images} alt="restoImage" ></img>
-                    <p></p>
+                    {pin.images &&(
+                        <>
+                            <label className='restaurantlabels'>RESTAURANT IMAGE</label>
+                            <p></p>
+                            <img className='restaurantImage' src={pin.images} alt="restoImage" ></img>
+                            <p></p>
+                        </>
+                    )}
                     <label className='restaurantlabels'>RESTAURANT REVIEWS</label>
                     <p></p>
                     {reviews.length !== 0 &&(

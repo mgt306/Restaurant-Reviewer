@@ -132,17 +132,36 @@ button:hover{
 .btn-primary{
   background-color: #a3e7f5;
   border: 5px solid #1e1e1e;
+  border-radius: 10px;
+  font: 900;
+  font-weight: bolder;
   color: #1e1e1e;
-  height: 100px;
-  width: 300px;
 }
 .btn-primary:hover{
   background-color: #1e1e1e;
   border: 5px solid #a3e7f5;
   color: #a3e7f5;
 }
-.buttons{
-  padding-top: 80vh;
-  font-weight: 900;
+.btn-primary1{
+  background-color: #a3e7f5;
+  border: 5px solid #1e1e1e;
+  border-radius: 30px;
+  font: 900;
+  font-weight: bolder;
+  color: #1e1e1e;
+  height: 100px;
+  width: 300px;
+}
+.btn-primary1:hover{
+  background-color: #1e1e1e;
+  border: 5px solid #a3e7f5;
+  color: #a3e7f5;
+}
+.buttonss{
+  padding-top: 75vh;
   padding-left: 50px;
+  font-weight: 600;
+}
+p.ratingg{
+  color:#9aadb0;
 }

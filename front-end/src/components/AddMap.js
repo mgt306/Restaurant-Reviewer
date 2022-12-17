@@ -97,7 +97,7 @@ const AddMapp = () => {
             longitude: addResto.long,
             images: addResto.url,
             booking: {
-                provider: String(addResto.provider),
+                provider: addResto.provider,
                 url: addResto.bookingurl
             }
         }
@@ -173,11 +173,11 @@ const AddMapp = () => {
                                                 <card>
                                                     <l>{r.title}</l>
                                                     <div className='stars'>
-                                                        <p className='ovrating'>Overall Rating: {Array(r.overallRating).fill(<StarIcon/>)} {Array(5-r.overallRating).fill(<StarBorderIcon/>)}</p>
-                                                        <p>Ambiance Rating: {Array(r.ambianceRating).fill(<StarIcon/>)} {Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
-                                                        <p>Food Rating: {Array(r.foodRating).fill(<StarIcon/>)} {Array(5-r.foodRating).fill(<StarBorderIcon/>)}</p>
-                                                        <p>Service Rating: {Array(r.serviceRating).fill(<StarIcon/>)} {Array(5-r.serviceRating).fill(<StarBorderIcon/>)}</p>
-                                                        <p>Price Rating: {Array(r.priceRating).fill(<StarIcon/>)} {Array(5-r.priceRating).fill(<StarBorderIcon/>)}</p>
+                                                        <p className='ratingg'>Overall Rating: <a className='filledStar'>{Array(r.overallRating).fill(<StarIcon/>)}</a> {Array(5-r.overallRating).fill(<StarBorderIcon/>)}</p>
+                                                        <p className='ratingg'>Ambiance Rating: <a className='filledStar'>{Array(r.ambianceRating).fill(<StarIcon/>)}</a> {Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
+                                                        <p className='ratingg'>Food Rating: <a className='filledStar'>{Array(r.foodRating).fill(<StarIcon/>)}</a> {Array(5-r.foodRating).fill(<StarBorderIcon/>)}</p>
+                                                        <p className='ratingg'>Service Rating: <a className='filledStar'>{Array(r.serviceRating).fill(<StarIcon/>)}</a> {Array(5-r.serviceRating).fill(<StarBorderIcon/>)}</p>
+                                                        <p className='ratingg'>Price Rating: <a className='filledStar'>{Array(r.priceRating).fill(<StarIcon/>)}</a> {Array(5-r.priceRating).fill(<StarBorderIcon/>)}</p>
                                                     </div>
                                                 </card>
                                                 <i><b>Posted by user "{r.postedBy.username}" {format(r.createdAt)} </b></i>
@@ -204,10 +204,10 @@ const AddMapp = () => {
                         />
                         <NavigationControl
                             position='top-right' />
-                        <div className='buttons'>
+                        <div className='buttonss'>
                         {addAvail === 0 &&(
                             <button 
-                                className="btn btn-primary"
+                                className="btn btn-primary1"
                                 onClick={() => setAddAvail(1)} 
                                 title="To enable add restaurant mode, first click this button. Then, to add a Restaurant, double click it's location on the map to place the Restaurant."
                             >
@@ -217,7 +217,7 @@ const AddMapp = () => {
                         )}
                         {addAvail === 1 &&(
                             <button
-                                className="btn btn-primary"
+                                className="btn btn-primary1"
                                 onClick={() => setAddAvail(0)}
                             >
                                 Disable Add Restaurant Mode                                 
