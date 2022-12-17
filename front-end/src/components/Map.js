@@ -112,7 +112,7 @@ const Mapp = () => {
                                             {review.map((r)=>
                                                 <div className='reviews' style={{paddingLeft: '10px', textAlign: 'center'}}>
                                                 <card>
-                                                    <l className='rtitle'>{r.title}</l>
+                                                    <l className='rtitle'>"{r.title}"</l>
                                                     <div className='stars'>
                                                         <p className='ratingg'>Overall Rating: <a className='filledStar'>{Array(r.overallRating).fill(<StarIcon/>)}</a> {Array(5-r.overallRating).fill(<StarBorderIcon/>)}</p>
                                                         <p className='ratingg'>Ambiance Rating: <a className='filledStar'>{Array(r.ambianceRating).fill(<StarIcon/>)}</a> {Array(5-r.ambianceRating).fill(<StarBorderIcon/>)}</p>
